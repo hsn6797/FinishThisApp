@@ -33,9 +33,7 @@ class leaderUser: Codable
             "UserName":userName,
             "QuizName":quizName,
             "Streak":streak,
-            
-           
-            
+
         ]
     }
     
