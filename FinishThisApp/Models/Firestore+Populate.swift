@@ -77,11 +77,12 @@ extension Firestore {
     
     func leaderboardExist(quizName: String, userName: String, completionHandler: @escaping (leaderUser?) -> ()){
         
-        self.leaderboards.whereField("quizName", isEqualTo: quizName).whereField("userName", isEqualTo: userName).getDocuments() { (querySnapshot, err) in
+        self.leaderboards.whereField("quizName", isEqualTo: quizName).whereField("userName", isEqualTo: userName).getDocuments() {(querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
                 completionHandler(nil)
-            } else {
+            }
+            else {
                 var lUser = leaderUser()
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
@@ -163,7 +164,7 @@ extension Firestore {
     
     func getLeaderboardsQuizName(_ quizName: String, completionHandler: @escaping ([leaderUser]) -> ()){
         
-        self.leaderboards.whereField("QuizName", isEqualTo: quizName).getDocuments(){ (querySnapshot, err) in
+        self.leaderboards.whereField("quizName", isEqualTo: quizName).getDocuments(){ (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {

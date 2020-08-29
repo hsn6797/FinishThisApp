@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
+import FBSDKShareKit
 
 class QuestionsViewController: UIViewController {
 
@@ -18,6 +19,7 @@ class QuestionsViewController: UIViewController {
     var currentQuestionNo = 0
     var isCorrect = false
     var streakCount = 0
+    var timerIsValidate = false
     
     //TIMER
     
@@ -107,6 +109,7 @@ class QuestionsViewController: UIViewController {
             
             if streakCount > 0 {
                 // Save record into DB
+                putScoreInLeaderboard()
             }
             Alert(Message: "You did'nt answer,\nBetter Luck, Next time", title: "Times Out")
         }
@@ -134,6 +137,7 @@ class QuestionsViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    
     func AlertOnFinish (Message: String,title:String){
         
         let alert = UIAlertController(title: title, message: Message, preferredStyle: UIAlertController.Style.alert)
@@ -142,7 +146,10 @@ class QuestionsViewController: UIViewController {
     }
     
     @objc func alerOnFinishbtn (_:UIAlertAction){
-        putScoreInLeaderboard()
+        if streakCount > 0 {
+            putScoreInLeaderboard()
+        }
+        self.navigationController?.popViewController(animated: true)
     }
     
     
@@ -150,8 +157,13 @@ class QuestionsViewController: UIViewController {
     
     func setQuestionUI(){
         // reset buttons states
-        timeLeft = 30
-        timer?.fire()
+        if timerIsValidate{
+            timeLeft = 30
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(onTimerFires), userInfo: nil, repeats: true)
+        }
+      
+        
+        ////////////////////
         isCorrect = false
         self.AnswerBtn1.resetButton()
         self.AnswerBtn2.resetButton()
@@ -187,6 +199,7 @@ class QuestionsViewController: UIViewController {
     
     @IBAction func AnswerBtn1(_ sender: Any) {
         timer?.invalidate()
+        timerIsValidate = true
         
         if AnswerBtn1.titleLabel?.text == self.questionList[self.currentQuestionNo].correctAns{
             AnswerBtn1.changeColor(color: UIColor.green, text: "Correct")
@@ -206,6 +219,8 @@ class QuestionsViewController: UIViewController {
     
     @IBAction func AnswerBtn2(_ sender: Any) {
         timer?.invalidate()
+        timerIsValidate = true
+
 
         if AnswerBtn2.titleLabel?.text == self.questionList[self.currentQuestionNo].correctAns{
             AnswerBtn2.changeColor(color: UIColor.green, text: "Correct")
@@ -225,6 +240,8 @@ class QuestionsViewController: UIViewController {
     
     @IBAction func AnswerBtn3(_ sender: Any) {
         timer?.invalidate()
+        timerIsValidate = true
+
 
         if AnswerBtn3.titleLabel?.text == self.questionList[self.currentQuestionNo].correctAns{
             AnswerBtn3.changeColor(color: UIColor.green, text: "Correct")
@@ -244,6 +261,9 @@ class QuestionsViewController: UIViewController {
     
     @IBAction func AnswerBtn4(_ sender: Any) {
         timer?.invalidate()
+        timerIsValidate = true
+
+
         if AnswerBtn4.titleLabel?.text == self.questionList[self.currentQuestionNo].correctAns{
             AnswerBtn4.changeColor(color: UIColor.green, text: "Correct")
             isCorrect = true
@@ -272,25 +292,57 @@ class QuestionsViewController: UIViewController {
                 
                 self.currentQuestionNo += 1
                 setQuestionUI()
-            }else{
+            }
+            else{
                 self.AlertOnFinish(Message: "you successfully finished the quiz with result: "+String(streakCount), title: "Congrats!!!")
             }
         }else{
             // Save Information in DB userName with Score
-            if streakCount > 0 {
-            }
-            self.AlertOnFinish(Message: "you failed the quiz with result: "+String(streakCount), title: "Better luck next time")
-
             
-//            self.navigationController?.popViewController(animated: true)
-        }
+            self.AlertOnFinish(Message: "you failed the quiz with result: "+String(streakCount), title: "Better luck next time")
+}
         
     }
     
     @IBAction func shareFB(_ sender: Any) {
         
+        shareInFacebook()
+        
+    }
+    
+    
+     func shareInFacebook() {
+        
+        let image = captureScreen()
+        let photo:FBSDKSharePhoto = FBSDKSharePhoto()
+        
+        photo.image = image
+        photo.caption = "Paste url App url here"
+        photo.isUserGenerated = true
+        
+        let content = FBSDKSharePhotoContent()
+        content.photos = [photo];
         
         
+        let dialog = FBSDKShareDialog()
+        dialog.fromViewController = self
+        dialog.shareContent = content
+        dialog.mode = .native
+        dialog.show()
+    }
+    
+    func captureScreen() -> UIImage
+    {
+        
+        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, 0);
+        
+        self.view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        
+        UIGraphicsEndImageContext()
+        
+        return image
     }
     
     
@@ -306,9 +358,11 @@ class QuestionsViewController: UIViewController {
             lUser.userName = user.userName
             lUser.streak = String(self.streakCount)
             
+            print("User:::\(lUser.quizName)and name\(lUser.userName)")
+            
             Firestore.firestore().leaderboardExist(quizName: lUser.quizName, userName: lUser.userName, completionHandler: {
                 leaderU in
-                print(leaderU?.leadID)
+                print("HAAAAAANNNN JIIIIII:::::::::::: "+(leaderU?.leadID)!)
                 if let lu = leaderU {
                     print("mil gaya " + lu.leadID)
                     lUser.leadID = lu.leadID

@@ -22,6 +22,8 @@ class LBHViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         let back = UIBarButtonItem(title: "Back", style: .plain, target:self, action: #selector(goBack))
         self.navigationItem.leftBarButtonItem = back
         self.navigationItem.title = "Score"
+        
+        self.loadAllLeaderboards()
 
         // Do any additional setup after loading the view.
     }

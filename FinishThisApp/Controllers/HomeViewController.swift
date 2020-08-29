@@ -8,8 +8,10 @@
 
 import UIKit
 import FirebaseFirestore
+import MessageUI
 
-class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate
+ {
  
     
     var quizList: [Quiz] = []
@@ -102,12 +104,28 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     func ContactUsClicked(alert:UIAlertAction){
         print("contact Clicked")
-        let sb = UIStoryboard(name: "Home",bundle: nil)
-        if let screen = sb.IIVC(vc: ContactUSViewController(),id: "Contact_VC"){
-            self.navigationController?.pushViewController(screen, animated: true)
+
+        
+        if (MFMessageComposeViewController.canSendText()) {
+            let controller = MFMessageComposeViewController()
+            controller.body = ""
+            controller.recipients = ["Enter your Email here!"]
+            controller.subject = "FinishThis"//Here goes whom you wants to send the message
+            controller.messageComposeDelegate = self as? MFMessageComposeViewControllerDelegate
+            self.present(controller, animated: true, completion: nil)
+        }
+        //This is just for testing purpose as when you run in the simulator, you cannot send the message.
+        else{
+            print("Cannot send the message")
         }
 
         
+    }
+    
+    func messageComposeViewController(controller:
+        MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
+        //Displaying the message screen with animation.
+        //self.dismiss(animated: true, completion: nil)
     }
     
     func AboutClicked(alert:UIAlertAction){

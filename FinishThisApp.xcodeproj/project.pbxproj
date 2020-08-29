@@ -31,7 +31,6 @@
 		C399897A24F7C69500633BE2 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C399897924F7C69500633BE2 /* Home.storyboard */; };
 		C399897C24F7CBCB00633BE2 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C399897B24F7CBCB00633BE2 /* QuestionsViewController.swift */; };
 		C399897F24F7D06E00633BE2 /* POPSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C399897E24F7D06E00633BE2 /* POPSettingViewController.swift */; };
-		C39DB3C824F7D674001AE4A8 /* ContactUSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39DB3C724F7D674001AE4A8 /* ContactUSViewController.swift */; };
 		C39DB3CB24F7D983001AE4A8 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39DB3CA24F7D983001AE4A8 /* AboutViewController.swift */; };
 		C39DB3CD24F7D993001AE4A8 /* PrivacyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39DB3CC24F7D993001AE4A8 /* PrivacyViewController.swift */; };
 		C39DB3D524F7EFC1001AE4A8 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39DB3D424F7EFC1001AE4A8 /* EditProfileViewController.swift */; };
@@ -387,7 +386,6 @@
 		C399897924F7C69500633BE2 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C399897B24F7CBCB00633BE2 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		C399897E24F7D06E00633BE2 /* POPSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POPSettingViewController.swift; sourceTree = "<group>"; };
-		C39DB3C724F7D674001AE4A8 /* ContactUSViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUSViewController.swift; sourceTree = "<group>"; };
 		C39DB3CA24F7D983001AE4A8 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		C39DB3CC24F7D993001AE4A8 /* PrivacyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewController.swift; sourceTree = "<group>"; };
 		C39DB3D424F7EFC1001AE4A8 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -835,7 +833,6 @@
 			isa = PBXGroup;
 			children = (
 				C399897E24F7D06E00633BE2 /* POPSettingViewController.swift */,
-				C39DB3C724F7D674001AE4A8 /* ContactUSViewController.swift */,
 				C39DB3CA24F7D983001AE4A8 /* AboutViewController.swift */,
 				C39DB3CC24F7D993001AE4A8 /* PrivacyViewController.swift */,
 			);
@@ -966,7 +963,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C399897F24F7D06E00633BE2 /* POPSettingViewController.swift in Sources */,
-				C39DB3C824F7D674001AE4A8 /* ContactUSViewController.swift in Sources */,
 				5C34EADD24F6EB8300C9A22F /* User.swift in Sources */,
 				C3DB288624FABACB0027BE72 /* leaderBoardQTableViewCell.swift in Sources */,
 				5C3D572424F96E900001A13D /* Question.swift in Sources */,

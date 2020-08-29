@@ -59,10 +59,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        setUser(firebaseUser: Auth.auth().currentUser)
-//        Auth.auth().addStateDidChangeListener { (auth, newUser) in
-//            self.setUser(firebaseUser: newUser)
-//        }
+
     }
 
     
@@ -73,32 +70,35 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             return
         }
         else{
-            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
-            
-            Auth.auth().signIn(with: credential) { (user, error) in
-                if let error = error {
-                    print("Facebook authentication with Firebase error: ", error)
-                    return
+            if result.isCancelled{
+                print("Cancelled")
+            }
+            else{
+                let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+                
+                Auth.auth().signIn(with: credential) { (user, error) in
+                    if let error = error {
+                        print("Facebook authentication with Firebase error: ", error)
+                        return
+                    }
+                    print("User signed in!")
+                    let userName = user?.displayName!
+                    let userID = user?.uid
+                    
+                    let db = Firestore.firestore()
+                    let user = User()
+                    user.userID = userID!
+                    user.userName = userName!
+                    user.email = self.emailTF.text!
+                    user.password = self.passwordTF.text!
+                    db.add(user: user)
+                    
+                    let sb = UIStoryboard(name: "Home",bundle: nil)
+                    if let homeVC = sb.IIVC(vc: HomeViewController(),id: "Home_VC"){
+                        self.navigationController?.pushViewController(homeVC, animated: true)
+                    }
                 }
-                print("User signed in!")
-                let userName = user?.displayName!
-                let userID = user?.uid
-                
-                let db = Firestore.firestore()
-                let user = User()
-                user.userID = userID!
-                user.userName = userName!
-                user.email = self.emailTF.text!
-                user.password = self.passwordTF.text!
-                db.add(user: user)
-                
-                
-                
-                // After this line the Facebook login should appear on your Firebase console
-                            let sb = UIStoryboard(name: "Home",bundle: nil)
-                            if let homeVC = sb.IIVC(vc: HomeViewController(),id: "Home_VC"){
-                                self.navigationController?.pushViewController(homeVC, animated: true)
-                            }
+
             }
         }
         
