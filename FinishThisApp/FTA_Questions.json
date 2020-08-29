@@ -1,0 +1,527 @@
+[
+    {
+        "QUESTION": "Frankly my dear, I don't give a___",
+        "CORRECT_ANSWER": "damn",
+        "WRONG_ANSWER_1": "care",
+        "WRONG_ANSWER_2": "worry",
+        "WRONG_ANSWER_3": "dam"
+    },
+    {
+        "QUESTION": "I'm going to give him an offer he can't___",
+        "CORRECT_ANSWER": "refuse",
+        "WRONG_ANSWER_1": "accept",
+        "WRONG_ANSWER_2": "knock back",
+        "WRONG_ANSWER_3": "decline"
+    },
+    {
+        "QUESTION": "Toto, I've got a feeling we are not in____ anymore",
+        "CORRECT_ANSWER": "kansas",
+        "WRONG_ANSWER_1": "new york",
+        "WRONG_ANSWER_2": "texas",
+        "WRONG_ANSWER_3": "Boston"
+    },
+    {
+        "QUESTION": "Go ahead, make my___",
+        "CORRECT_ANSWER": "day",
+        "WRONG_ANSWER_1": "night",
+        "WRONG_ANSWER_2": "afternoon",
+        "WRONG_ANSWER_3": "morning"
+    },
+    {
+        "QUESTION": "May the___be with you",
+        "CORRECT_ANSWER": "force",
+        "WRONG_ANSWER_1": "power",
+        "WRONG_ANSWER_2": "source",
+        "WRONG_ANSWER_3": "energy"
+    },
+    {
+        "QUESTION": "Fasten your seat belts. It's going to be a bumpy…",
+        "CORRECT_ANSWER": "night",
+        "WRONG_ANSWER_1": "ride",
+        "WRONG_ANSWER_2": "slide",
+        "WRONG_ANSWER_3": "evening"
+    },
+    {
+        "QUESTION": "What we've got here is failure to___",
+        "CORRECT_ANSWER": "communicate",
+        "WRONG_ANSWER_1": "talk",
+        "WRONG_ANSWER_2": "speak up",
+        "WRONG_ANSWER_3": "connect"
+    },
+    {
+        "QUESTION": "Love means never having to say your___",
+        "CORRECT_ANSWER": "sorry",
+        "WRONG_ANSWER_1": "happy",
+        "WRONG_ANSWER_2": "sad",
+        "WRONG_ANSWER_3": "guilty"
+    },
+    {
+        "QUESTION": "The stuff that___are made of",
+        "CORRECT_ANSWER": "dreams",
+        "WRONG_ANSWER_1": "goals",
+        "WRONG_ANSWER_2": "aspirations",
+        "WRONG_ANSWER_3": "fantasies"
+    },
+    {
+        "QUESTION": " I have a___",
+        "CORRECT_ANSWER": "dream",
+        "WRONG_ANSWER_1": "goal",
+        "WRONG_ANSWER_2": "thought",
+        "WRONG_ANSWER_3": "challenge"
+    },
+    {
+        "QUESTION": " I think this is the beginning of a beautiful___",
+        "CORRECT_ANSWER": "friendship",
+        "WRONG_ANSWER_1": "relationship",
+        "WRONG_ANSWER_2": "acquaintance",
+        "WRONG_ANSWER_3": "alliance"
+    },
+    {
+        "QUESTION": " Made it, Ma! Top of the___",
+        "CORRECT_ANSWER": "world",
+        "WRONG_ANSWER_1": "mountain",
+        "WRONG_ANSWER_2": "building",
+        "WRONG_ANSWER_3": "tree"
+    },
+    {
+        "QUESTION": " Bond.___Bond",
+        "CORRECT_ANSWER": "james",
+        "WRONG_ANSWER_1": "john",
+        "WRONG_ANSWER_2": "jeff",
+        "WRONG_ANSWER_3": "jason"
+    },
+    {
+        "QUESTION": " There's no place like___",
+        "CORRECT_ANSWER": "home",
+        "WRONG_ANSWER_1": "work",
+        "WRONG_ANSWER_2": "house",
+        "WRONG_ANSWER_3": "homeland"
+    },
+    {
+        "QUESTION": " Round up the usual___",
+        "CORRECT_ANSWER": "suspects",
+        "WRONG_ANSWER_1": "team",
+        "WRONG_ANSWER_2": "people",
+        "WRONG_ANSWER_3": "questionableople"
+    },
+    {
+        "QUESTION": " You're going to need a bigger___",
+        "CORRECT_ANSWER": "boat",
+        "WRONG_ANSWER_1": "car",
+        "WRONG_ANSWER_2": "bike",
+        "WRONG_ANSWER_3": "house"
+    },
+    {
+        "QUESTION": " ___be back",
+        "CORRECT_ANSWER": "i'll",
+        "WRONG_ANSWER_1": "you'll",
+        "WRONG_ANSWER_2": "they'll",
+        "WRONG_ANSWER_3": "It'll"
+    },
+    {
+        "QUESTION": " Life is like a___of chocolates",
+        "CORRECT_ANSWER": "box",
+        "WRONG_ANSWER_1": "carton",
+        "WRONG_ANSWER_2": "packet",
+        "WRONG_ANSWER_3": "stash"
+    },
+    {
+        "QUESTION": " I see___people",
+        "CORRECT_ANSWER": "dead",
+        "WRONG_ANSWER_1": "many",
+        "WRONG_ANSWER_2": "several",
+        "WRONG_ANSWER_3": "ghost"
+    },
+    {
+        "QUESTION": " Houston, we have a___",
+        "CORRECT_ANSWER": "problem",
+        "WRONG_ANSWER_1": "situation",
+        "WRONG_ANSWER_2": "issue",
+        "WRONG_ANSWER_3": "concern"
+    },
+    {
+        "QUESTION": " There's no crying in___",
+        "CORRECT_ANSWER": "baseball",
+        "WRONG_ANSWER_1": "basketball",
+        "WRONG_ANSWER_2": "football",
+        "WRONG_ANSWER_3": "tennis"
+    },
+    {
+        "QUESTION": " ___is good",
+        "CORRECT_ANSWER": "greed",
+        "WRONG_ANSWER_1": "love",
+        "WRONG_ANSWER_2": "power",
+        "WRONG_ANSWER_3": "success"
+    },
+    {
+        "QUESTION": "Keep your friends close, but your___closer",
+        "CORRECT_ANSWER": "enemies",
+        "WRONG_ANSWER_1": "family",
+        "WRONG_ANSWER_2": "teammates",
+        "WRONG_ANSWER_3": "partner"
+    },
+    {
+        "QUESTION": " A boy's best friend is his___",
+        "CORRECT_ANSWER": "mother",
+        "WRONG_ANSWER_1": "father",
+        "WRONG_ANSWER_2": "brother",
+        "WRONG_ANSWER_3": "sister"
+    },
+    {
+        "QUESTION": " Get your stinking paws off me, you damned dirty___",
+        "CORRECT_ANSWER": "ape",
+        "WRONG_ANSWER_1": "dog",
+        "WRONG_ANSWER_2": "monkey",
+        "WRONG_ANSWER_3": "rat"
+    },
+    {
+        "QUESTION": " I feel the need, the need for___",
+        "CORRECT_ANSWER": "speed",
+        "WRONG_ANSWER_1": "power",
+        "WRONG_ANSWER_2": "success",
+        "WRONG_ANSWER_3": "money"
+    },
+    {
+        "QUESTION": " I'm___of the world",
+        "CORRECT_ANSWER": "king",
+        "WRONG_ANSWER_1": "queen",
+        "WRONG_ANSWER_2": "prince",
+        "WRONG_ANSWER_3": "on top"
+    },
+    {
+        "QUESTION": " Show me the___",
+        "CORRECT_ANSWER": "money",
+        "WRONG_ANSWER_1": "power",
+        "WRONG_ANSWER_2": "passion",
+        "WRONG_ANSWER_3": "greed"
+    },
+    {
+        "QUESTION": " The good, the bad and the___",
+        "CORRECT_ANSWER": "ugly",
+        "WRONG_ANSWER_1": "beautiful",
+        "WRONG_ANSWER_2": "distasteful",
+        "WRONG_ANSWER_3": "pretty"
+    },
+    {
+        "QUESTION": " Money makes the world go___",
+        "CORRECT_ANSWER": "round",
+        "WRONG_ANSWER_1": "faster",
+        "WRONG_ANSWER_2": "smoother",
+        "WRONG_ANSWER_3": "better"
+    },
+    {
+        "QUESTION": " ___out of it",
+        "CORRECT_ANSWER": "snap",
+        "WRONG_ANSWER_1": "come",
+        "WRONG_ANSWER_2": "break",
+        "WRONG_ANSWER_3": "move"
+    },
+    {
+        "QUESTION": " Snap, crackle and___",
+        "CORRECT_ANSWER": "pop",
+        "WRONG_ANSWER_1": "break",
+        "WRONG_ANSWER_2": "jump",
+        "WRONG_ANSWER_3": "sling"
+    },
+    {
+        "QUESTION": " Who's on___",
+        "CORRECT_ANSWER": "first",
+        "WRONG_ANSWER_1": "second",
+        "WRONG_ANSWER_2": "third",
+        "WRONG_ANSWER_3": "top"
+    },
+    {
+        "QUESTION": " My___",
+        "CORRECT_ANSWER": "precious",
+        "WRONG_ANSWER_1": "valuable",
+        "WRONG_ANSWER_2": "important",
+        "WRONG_ANSWER_3": "expensive"
+    },
+    {
+        "QUESTION": " How you___",
+        "CORRECT_ANSWER": "doin",
+        "WRONG_ANSWER_1": "going",
+        "WRONG_ANSWER_2": "doing",
+        "WRONG_ANSWER_3": "travelling"
+    },
+    {
+        "QUESTION": " Hello___",
+        "CORRECT_ANSWER": "gorgeous",
+        "WRONG_ANSWER_1": "beautiful",
+        "WRONG_ANSWER_2": "pretty",
+        "WRONG_ANSWER_3": "bella"
+    },
+    {
+        "QUESTION": " Eat my___",
+        "CORRECT_ANSWER": "shorts",
+        "WRONG_ANSWER_1": "pants",
+        "WRONG_ANSWER_2": "skirt",
+        "WRONG_ANSWER_3": "shoes"
+    },
+    {
+        "QUESTION": " Honey___",
+        "CORRECT_ANSWER": "i'm home",
+        "WRONG_ANSWER_1": "i'm back",
+        "WRONG_ANSWER_2": "i'm coming",
+        "WRONG_ANSWER_3": "lets go"
+    },
+    {
+        "QUESTION": " Survival of the___",
+        "CORRECT_ANSWER": "fittest",
+        "WRONG_ANSWER_1": "strongest",
+        "WRONG_ANSWER_2": "smartest",
+        "WRONG_ANSWER_3": "richest"
+    },
+    {
+        "QUESTION": " The quick brown fox jumps over the lazy___",
+        "CORRECT_ANSWER": "dog",
+        "WRONG_ANSWER_1": "cat",
+        "WRONG_ANSWER_2": "rat",
+        "WRONG_ANSWER_3": "person"
+    },
+    {
+        "QUESTION": " Student becomes the___",
+        "CORRECT_ANSWER": "master",
+        "WRONG_ANSWER_1": "teacher",
+        "WRONG_ANSWER_2": "leader",
+        "WRONG_ANSWER_3": "boss"
+    },
+    {
+        "QUESTION": " The only thing we have to___is fear itself",
+        "CORRECT_ANSWER": "fear",
+        "WRONG_ANSWER_1": "be scared of",
+        "WRONG_ANSWER_2": "worry about",
+        "WRONG_ANSWER_3": "avoid"
+    },
+    {
+        "QUESTION": " If you can___it you can do it",
+        "CORRECT_ANSWER": "dream",
+        "WRONG_ANSWER_1": "see",
+        "WRONG_ANSWER_2": "feel",
+        "WRONG_ANSWER_3": "touch"
+    },
+    {
+        "QUESTION": " Life is all about taking___",
+        "CORRECT_ANSWER": "risks",
+        "WRONG_ANSWER_1": "chances",
+        "WRONG_ANSWER_2": "opportunities",
+        "WRONG_ANSWER_3": "leaps"
+    },
+    {
+        "QUESTION": " Laugh about your___",
+        "CORRECT_ANSWER": "mistakes",
+        "WRONG_ANSWER_1": "errors",
+        "WRONG_ANSWER_2": "faults",
+        "WRONG_ANSWER_3": "flaws"
+    },
+    {
+        "QUESTION": " Strength lies in differences, not in",
+        "CORRECT_ANSWER": "simmilarities",
+        "WRONG_ANSWER_1": "muscle",
+        "WRONG_ANSWER_2": "size",
+        "WRONG_ANSWER_3": "familiarities"
+    },
+    {
+        "QUESTION": " if you want to soar in life you must first learn to___",
+        "CORRECT_ANSWER": "fly",
+        "WRONG_ANSWER_1": "leap",
+        "WRONG_ANSWER_2": "jump",
+        "WRONG_ANSWER_3": "glide"
+    },
+    {
+        "QUESTION": " ___demands singleness of purpose",
+        "CORRECT_ANSWER": "success",
+        "WRONG_ANSWER_1": "achievement",
+        "WRONG_ANSWER_2": "happiness",
+        "WRONG_ANSWER_3": "prosperity"
+    },
+    {
+        "QUESTION": " ___is the best medicine",
+        "CORRECT_ANSWER": "laughter",
+        "WRONG_ANSWER_1": "positivity",
+        "WRONG_ANSWER_2": "panadol",
+        "WRONG_ANSWER_3": "antibiotics"
+    },
+    {
+        "QUESTION": " ___it's two letters too long",
+        "CORRECT_ANSWER": "impossible",
+        "WRONG_ANSWER_1": "unbelievable",
+        "WRONG_ANSWER_2": "unachievable",
+        "WRONG_ANSWER_3": "impracticle"
+    },
+    {
+        "QUESTION": " If you____in it, then anything is possible",
+        "CORRECT_ANSWER": "believe",
+        "WRONG_ANSWER_1": "trust",
+        "WRONG_ANSWER_2": "thnk",
+        "WRONG_ANSWER_3": "have faith"
+    },
+    {
+        "QUESTION": " Every day should be passed as if it were to be our___",
+        "CORRECT_ANSWER": "last",
+        "WRONG_ANSWER_1": " final",
+        "WRONG_ANSWER_2": "end",
+        "WRONG_ANSWER_3": "finish"
+    },
+    {
+        "QUESTION": " An___for an___will make the whole world blind",
+        "CORRECT_ANSWER": "eye",
+        "WRONG_ANSWER_1": "ear",
+        "WRONG_ANSWER_2": "nose",
+        "WRONG_ANSWER_3": "mouth"
+    },
+    {
+        "QUESTION": " If you want something done, ask a___person",
+        "CORRECT_ANSWER": "busy",
+        "WRONG_ANSWER_1": "lazy",
+        "WRONG_ANSWER_2": "trustworthy",
+        "WRONG_ANSWER_3": "honest"
+    },
+    {
+        "QUESTION": " It is only this who never do anything who never make___",
+        "CORRECT_ANSWER": "mistakes",
+        "WRONG_ANSWER_1": "errors",
+        "WRONG_ANSWER_2": "faults",
+        "WRONG_ANSWER_3": "changes"
+    },
+    {
+        "QUESTION": " There is always room for___",
+        "CORRECT_ANSWER": "improvement",
+        "WRONG_ANSWER_1": "change",
+        "WRONG_ANSWER_2": "adjustments",
+        "WRONG_ANSWER_3": "alterations"
+    },
+    {
+        "QUESTION": " Real___is doing something nice for someone who will never find out",
+        "CORRECT_ANSWER": "generosity",
+        "WRONG_ANSWER_1": "politeness",
+        "WRONG_ANSWER_2": "honesty",
+        "WRONG_ANSWER_3": "kindness"
+    },
+    {
+        "QUESTION": " You can't handle the___",
+        "CORRECT_ANSWER": "truth",
+        "WRONG_ANSWER_1": "facts",
+        "WRONG_ANSWER_2": "reality",
+        "WRONG_ANSWER_3": "circumstances"
+    },
+    {
+        "QUESTION": " The best way to make your dreams come true is to___",
+        "CORRECT_ANSWER": "wake up",
+        "WRONG_ANSWER_1": "stay asleep",
+        "WRONG_ANSWER_2": "work hard",
+        "WRONG_ANSWER_3": "always dream"
+    },
+    {
+        "QUESTION": " You can't hold a___down without staying down with him",
+        "CORRECT_ANSWER": "man",
+        "WRONG_ANSWER_1": "person",
+        "WRONG_ANSWER_2": "female",
+        "WRONG_ANSWER_3": "woman"
+    },
+    {
+        "QUESTION": " Slow and steady win the___",
+        "CORRECT_ANSWER": "race",
+        "WRONG_ANSWER_1": "event",
+        "WRONG_ANSWER_2": "fastest",
+        "WRONG_ANSWER_3": "pursuit"
+    },
+    {
+        "QUESTION": " Yeah? Well, at least I'm not___",
+        "CORRECT_ANSWER": "ugly",
+        "WRONG_ANSWER_1": "disgusting",
+        "WRONG_ANSWER_2": "daggy",
+        "WRONG_ANSWER_3": "shaggy"
+    },
+    {
+        "QUESTION": " There's an awful lot you can tell about a person by their___",
+        "CORRECT_ANSWER": "shoes",
+        "WRONG_ANSWER_1": "feet",
+        "WRONG_ANSWER_2": "jeans",
+        "WRONG_ANSWER_3": "jumper"
+    },
+    {
+        "QUESTION": " You are the___thing that every happened to me",
+        "CORRECT_ANSWER": "worst",
+        "WRONG_ANSWER_1": "best",
+        "WRONG_ANSWER_2": "hardest",
+        "WRONG_ANSWER_3": "easiest"
+    },
+    {
+        "QUESTION": " No___but what we make for ourselves",
+        "CORRECT_ANSWER": "fate",
+        "WRONG_ANSWER_1": "chance",
+        "WRONG_ANSWER_2": "luck",
+        "WRONG_ANSWER_3": "coincidence"
+    },
+    {
+        "QUESTION": " With my___brains and your looks we could go places",
+        "CORRECT_ANSWER": "brains",
+        "WRONG_ANSWER_1": "looks",
+        "WRONG_ANSWER_2": "genes",
+        "WRONG_ANSWER_3": "fortune"
+    },
+    {
+        "QUESTION": " Live for nothing or___for something",
+        "CORRECT_ANSWER": "die",
+        "WRONG_ANSWER_1": "live",
+        "WRONG_ANSWER_2": "wait",
+        "WRONG_ANSWER_3": "hold out"
+    },
+    {
+        "QUESTION": " Nothing is worth more than this___",
+        "CORRECT_ANSWER": "day",
+        "WRONG_ANSWER_1": "night",
+        "WRONG_ANSWER_2": "moment",
+        "WRONG_ANSWER_3": "second"
+    },
+    {
+        "QUESTION": " I like the___of the future better than the history of the past",
+        "CORRECT_ANSWER": "dreams",
+        "WRONG_ANSWER_1": "hopes",
+        "WRONG_ANSWER_2": "aspirations",
+        "WRONG_ANSWER_3": "goals"
+    },
+    {
+        "QUESTION": "  Better to ask___than lose your way once",
+        "CORRECT_ANSWER": "twice",
+        "WRONG_ANSWER_1": "once",
+        "WRONG_ANSWER_2": "three times",
+        "WRONG_ANSWER_3": "four times"
+    },
+    {
+        "QUESTION": " A long___may not be good enough, but a good___is long enough",
+        "CORRECT_ANSWER": "life",
+        "WRONG_ANSWER_1": "time",
+        "WRONG_ANSWER_2": "day",
+        "WRONG_ANSWER_3": "night"
+    },
+    {
+        "QUESTION": " Say hello to my little___",
+        "CORRECT_ANSWER": "friend",
+        "WRONG_ANSWER_1": "mate",
+        "WRONG_ANSWER_2": "pal",
+        "WRONG_ANSWER_3": "buddy"
+    },
+    {
+        "QUESTION": " Pursuit of___",
+        "CORRECT_ANSWER": "happiness",
+        "WRONG_ANSWER_1": "dreams",
+        "WRONG_ANSWER_2": "freedom",
+        "WRONG_ANSWER_3": "success"
+    },
+    {
+        "QUESTION": " ___is the first day of the rest of your life",
+        "CORRECT_ANSWER": "today",
+        "WRONG_ANSWER_1": "tomorrow",
+        "WRONG_ANSWER_2": "now",
+        "WRONG_ANSWER_3": "next week"
+    },
+    {
+        "QUESTION": " Your never too old to become___",
+        "CORRECT_ANSWER": "younger",
+        "WRONG_ANSWER_1": "older",
+        "WRONG_ANSWER_2": "newer",
+        "WRONG_ANSWER_3": "better"
+    }
+]
