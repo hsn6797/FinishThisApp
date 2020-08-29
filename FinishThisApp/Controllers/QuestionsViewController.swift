@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseFirestore
+import FirebaseAuth
 
 class QuestionsViewController: UIViewController {
 
@@ -131,6 +132,17 @@ class QuestionsViewController: UIViewController {
     
     @objc func alerbtn (_:UIAlertAction){
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    func AlertOnFinish (Message: String,title:String){
+        
+        let alert = UIAlertController(title: title, message: Message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: alerOnFinishbtn))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @objc func alerOnFinishbtn (_:UIAlertAction){
+        putScoreInLeaderboard()
     }
     
     
@@ -260,14 +272,17 @@ class QuestionsViewController: UIViewController {
                 
                 self.currentQuestionNo += 1
                 setQuestionUI()
+            }else{
+                self.AlertOnFinish(Message: "you successfully finished the quiz with result: "+String(streakCount), title: "Congrats!!!")
             }
         }else{
             // Save Information in DB userName with Score
             if streakCount > 0 {
-                
             }
+            self.AlertOnFinish(Message: "you failed the quiz with result: "+String(streakCount), title: "Better luck next time")
+
             
-            self.navigationController?.popViewController(animated: true)
+//            self.navigationController?.popViewController(animated: true)
         }
         
     }
@@ -279,9 +294,36 @@ class QuestionsViewController: UIViewController {
     }
     
     
-    
-    
-    
+    func putScoreInLeaderboard(){
+        
+        guard let currentUser = Auth.auth().currentUser else{return}
+        
+        Firestore.firestore().getCurrentUser(userID: currentUser.uid , completionHandler:{
+            user in
+            
+            let lUser = leaderUser()
+            lUser.quizName = self.quizObj.QuizName
+            lUser.userName = user.userName
+            lUser.streak = String(self.streakCount)
+            
+            Firestore.firestore().leaderboardExist(quizName: lUser.quizName, userName: lUser.userName, completionHandler: {
+                leaderU in
+                print(leaderU?.leadID)
+                if let lu = leaderU {
+                    print("mil gaya " + lu.leadID)
+                    lUser.leadID = lu.leadID
+                    Firestore.firestore().add(lUser: lUser)
+                }else{
+                    print("ni mila")
+                    lUser.leadID = String(Int.random(in: 0..<1000)) + currentUser.uid  + String(Int.random(in: 0..<800))
+                    Firestore.firestore().add(lUser: lUser)
+                }
+                
+            })
 
+        })
+        self.navigationController?.popViewController(animated: true)
 
+    }
+    
 }

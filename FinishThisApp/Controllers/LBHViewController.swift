@@ -7,9 +7,12 @@
 //
 
 import UIKit
-
+import FirebaseFirestore
 class LBHViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
    
+
+    var quizObj = Quiz()
+    var leaderboardList: [leaderUser] = []
 
     @IBOutlet weak var LBH_tableView: UITableView!
     override func viewDidLoad() {
@@ -23,17 +26,29 @@ class LBHViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         // Do any additional setup after loading the view.
     }
     
+    func loadAllLeaderboards(){
+        Firestore.firestore().getLeaderboardsQuizName(quizObj.QuizName, completionHandler: {
+            leaderboards in
+            self.leaderboardList = leaderboards
+            self.LBH_tableView.reloadData()
+            
+        })
+        
+    }
+    
     @objc func goBack(){
         self.navigationController?.popViewController(animated: true)
     }
     
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return self.leaderboardList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as! LHS_TableViewCell
+        cell.userName.text = self.leaderboardList[indexPath.row].userName
+        cell.scoreLbl.text = self.leaderboardList[indexPath.row].streak
         return cell
     }
     

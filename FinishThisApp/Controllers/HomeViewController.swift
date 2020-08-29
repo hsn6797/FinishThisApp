@@ -54,10 +54,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             quizes in
             self.quizList = quizes
             self.QuizTableViewController.reloadData()
-//            for q in quizes {
-//                print(q.QuizName)
-//
-//            }
+
         })
         
     }

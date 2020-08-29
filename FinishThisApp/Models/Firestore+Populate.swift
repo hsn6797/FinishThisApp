@@ -27,6 +27,11 @@ extension Firestore {
         return self.collection("Questions")
     }
     
+    /// Returns a reference to the top-level leaderBoard collection.
+    var leaderboards: CollectionReference {
+        return self.collection("leaderBoard")
+    }
+    
     
 }
 
@@ -37,6 +42,10 @@ extension Firestore {
     /// user's uid already exists in the collection.
     func add(user: User) {
         self.users.document(user.documentID).setData(user.documentData)
+    }
+    
+    func add(lUser: leaderUser) {
+        self.leaderboards.document(lUser.leadID).setData(lUser.documentData)
     }
     
     func getCurrentUser(userID: String,completionHandler: @escaping (User) -> ()){
@@ -64,22 +73,36 @@ extension Firestore {
             }
         }
         
+    }
+    
+    func leaderboardExist(quizName: String, userName: String, completionHandler: @escaping (leaderUser?) -> ()){
         
-        
-//        self.users.getDocuments(completion: {
-//            (querySnapshot, err) in
-//            if(err != nil){
-//                // Error
-//            }else{
-//                for document in querySnapshot!.documents {
-//                    let u = User()
-//                    u.userID = document.documentID
-//                    u.userName = document.data()
-//
-//                    print("\(document.documentID) => \(document.data())")
-//                }
-//            }
-//        })
+        self.leaderboards.whereField("quizName", isEqualTo: quizName).whereField("userName", isEqualTo: userName).getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completionHandler(nil)
+            } else {
+                var lUser = leaderUser()
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    
+                    guard let d = Helper.ParametersToData(prams: document.data() as [String : AnyObject]) else{
+                        return
+                    }
+                    guard let leaderU = Helper.dataToObject(data: d, object: leaderUser.self) else{
+                        return
+                    }
+                    leaderU.leadID = document.documentID
+                    lUser = leaderU
+                    break
+                    
+                }
+                completionHandler(lUser)
+                
+            }
+        }
+        completionHandler(nil)
+
     }
     
     
@@ -137,6 +160,36 @@ extension Firestore {
         }
     }
 
+    
+    func getLeaderboardsQuizName(_ quizName: String, completionHandler: @escaping ([leaderUser]) -> ()){
+        
+        self.leaderboards.whereField("QuizName", isEqualTo: quizName).getDocuments(){ (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                var leaderboards: [leaderUser] = []
+                
+                for document in querySnapshot!.documents {
+                    //                    print("\(document.documentID) => \(document.data())")
+                    
+                    guard let d = Helper.ParametersToData(prams: document.data() as [String : AnyObject]) else{
+                        return
+                    }
+                    guard let leaderboard = Helper.dataToObject(data: d, object: leaderUser.self) else{
+                        return
+                    }
+                    leaderboard.leadID = document.documentID
+                    leaderboards.append(leaderboard)
+                    
+                }
+                completionHandler(leaderboards)
+                
+            }
+        }
+    }
+
+    
+    
 }
 
 extension WriteBatch {

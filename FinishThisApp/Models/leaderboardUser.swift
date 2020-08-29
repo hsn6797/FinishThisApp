@@ -23,16 +23,14 @@ class leaderUser: Codable
         case userName
         case quizName
         case streak
-        case leadID
     }
     
     /// A user object's representation in Firestore.
     public var documentData: [String: Any] {
         return [
-            "LeadID":leadID,
-            "UserName":userName,
-            "QuizName":quizName,
-            "Streak":streak,
+            "userName":userName,
+            "quizName":quizName,
+            "streak":streak,
 
         ]
     }
