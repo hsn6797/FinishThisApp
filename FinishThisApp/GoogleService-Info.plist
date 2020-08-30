@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>295394640681-11ooni3bnae13keab8drcrgdbv6lbvp8.apps.googleusercontent.com</string>
+	<string>880612465978-dj5fejuqb94pbvai1iloqduab2oohkig.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.295394640681-11ooni3bnae13keab8drcrgdbv6lbvp8</string>
+	<string>com.googleusercontent.apps.880612465978-dj5fejuqb94pbvai1iloqduab2oohkig</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDJfx_4Zp7iijyhq6RkTcRGWp6LQI0ual0</string>
+	<string>AIzaSyDWoDMMebaI_mwl2NvmxVPRiTXumgWfydw</string>
 	<key>GCM_SENDER_ID</key>
-	<string>295394640681</string>
+	<string>880612465978</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.sufnatech.FinishThisApp</string>
+	<string>sufnatech.FinishThisApp</string>
 	<key>PROJECT_ID</key>
-	<string>finishthisapp-79473</string>
+	<string>finishthisapp-545e0</string>
 	<key>STORAGE_BUCKET</key>
-	<string>finishthisapp-79473.appspot.com</string>
+	<string>finishthisapp-545e0.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:295394640681:ios:8f5fe745f0bfadb788ed38</string>
+	<string>1:880612465978:ios:9e30a509804b3251508403</string>
 	<key>DATABASE_URL</key>
-	<string>https://finishthisapp-79473.firebaseio.com</string>
+	<string>https://finishthisapp-545e0.firebaseio.com</string>
 </dict>
 </plist>

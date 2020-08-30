@@ -32,7 +32,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        
+//        if FBSDKAccessToken.current() != nil{
+//            FBSDKAccessToken.setCurrent(nil)
+//        }
         let loginButton = FBSDKLoginButton()
         myView.addSubview(loginButton)
         loginButton.frame = CGRect(x: 40, y: 400, width: myView.frame.width - 75, height: 50)

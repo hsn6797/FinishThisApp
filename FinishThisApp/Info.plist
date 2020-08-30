@@ -41,6 +41,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    
+    
 
     <key>CFBundleURLTypes</key>
     <array>
@@ -57,6 +59,7 @@
     <string>FinishThisApp</string>
     
     
+	
     <key>LSApplicationQueriesSchemes</key>
     <array>
         <string>fbapi</string>
@@ -75,5 +78,7 @@
         <string>fbauth2</string>
         <string>fbshareextension</string>
     </array>
+    
+    
 </dict>
 </plist>
