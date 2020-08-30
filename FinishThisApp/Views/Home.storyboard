@@ -824,7 +824,7 @@ We are committed to ensuring that your information is secure. In order to preven
                                             <constraint firstItem="Tzt-SB-oWX" firstAttribute="top" secondItem="R5P-Gq-aKK" secondAttribute="top" constant="12" id="ePX-yD-JTA"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" estimatedRowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o8k-1Q-GCI">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="68" estimatedRowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o8k-1Q-GCI">
                                         <rect key="frame" x="34" y="139" width="274" height="465"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -842,20 +842,20 @@ We are committed to ensuring that your information is secure. In order to preven
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eCy-46-f6e">
                                                             <rect key="frame" x="17" y="5" width="240" height="52"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqi-QG-AGF">
-                                                                    <rect key="frame" x="15" y="16" width="102" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqi-QG-AGF">
+                                                                    <rect key="frame" x="8" y="15" width="164" height="21"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="21" id="W0i-qL-bam"/>
-                                                                        <constraint firstAttribute="width" constant="102" id="oPb-hv-H1W"/>
+                                                                        <constraint firstAttribute="width" constant="164" id="oPb-hv-H1W"/>
                                                                     </constraints>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2K9-Z8-H1j">
-                                                                    <rect key="frame" x="174" y="15" width="58" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2K9-Z8-H1j">
+                                                                    <rect key="frame" x="191" y="14" width="33" height="21"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="58" id="OCN-oN-5Zh"/>
+                                                                        <constraint firstAttribute="width" constant="33" id="OCN-oN-5Zh"/>
                                                                         <constraint firstAttribute="height" constant="21" id="iqn-7A-QRK"/>
                                                                     </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -866,14 +866,14 @@ We are committed to ensuring that your information is secure. In order to preven
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="52" id="1Xy-kg-pzH"/>
-                                                                <constraint firstAttribute="bottom" secondItem="2K9-Z8-H1j" secondAttribute="bottom" constant="16" id="2gq-DH-fje"/>
+                                                                <constraint firstAttribute="bottom" secondItem="2K9-Z8-H1j" secondAttribute="bottom" constant="17" id="2gq-DH-fje"/>
                                                                 <constraint firstAttribute="width" constant="240" id="G0G-zc-qh0"/>
-                                                                <constraint firstItem="sqi-QG-AGF" firstAttribute="leading" secondItem="eCy-46-f6e" secondAttribute="leading" constant="15" id="VU4-vo-PJT"/>
-                                                                <constraint firstAttribute="bottom" secondItem="sqi-QG-AGF" secondAttribute="bottom" constant="15" id="Zz8-mE-JUw"/>
-                                                                <constraint firstItem="2K9-Z8-H1j" firstAttribute="top" secondItem="eCy-46-f6e" secondAttribute="top" constant="15" id="cc2-2J-IYN"/>
-                                                                <constraint firstAttribute="trailing" secondItem="2K9-Z8-H1j" secondAttribute="trailing" constant="8" id="dkh-ef-rh4"/>
-                                                                <constraint firstItem="2K9-Z8-H1j" firstAttribute="leading" secondItem="sqi-QG-AGF" secondAttribute="trailing" constant="57" id="xgn-eB-TWE"/>
-                                                                <constraint firstItem="sqi-QG-AGF" firstAttribute="top" secondItem="eCy-46-f6e" secondAttribute="top" constant="16" id="yMe-MJ-M5D"/>
+                                                                <constraint firstItem="sqi-QG-AGF" firstAttribute="leading" secondItem="eCy-46-f6e" secondAttribute="leading" constant="8" id="VU4-vo-PJT"/>
+                                                                <constraint firstAttribute="bottom" secondItem="sqi-QG-AGF" secondAttribute="bottom" constant="16" id="Zz8-mE-JUw"/>
+                                                                <constraint firstItem="2K9-Z8-H1j" firstAttribute="top" secondItem="eCy-46-f6e" secondAttribute="top" constant="14" id="cc2-2J-IYN"/>
+                                                                <constraint firstAttribute="trailing" secondItem="2K9-Z8-H1j" secondAttribute="trailing" constant="16" id="dkh-ef-rh4"/>
+                                                                <constraint firstItem="2K9-Z8-H1j" firstAttribute="leading" secondItem="sqi-QG-AGF" secondAttribute="trailing" constant="19" id="xgn-eB-TWE"/>
+                                                                <constraint firstItem="sqi-QG-AGF" firstAttribute="top" secondItem="eCy-46-f6e" secondAttribute="top" constant="15" id="yMe-MJ-M5D"/>
                                                             </constraints>
                                                         </view>
                                                     </subviews>
@@ -967,7 +967,7 @@ We are committed to ensuring that your information is secure. In order to preven
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zj-gp-ybb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4593" y="-123"/>
+            <point key="canvasLocation" x="4592.8000000000002" y="-123.68815592203899"/>
         </scene>
     </scenes>
 </document>
