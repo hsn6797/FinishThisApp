@@ -101,10 +101,11 @@ class QuestionsViewController: UIViewController {
     @objc func onTimerFires()
     {
         timeLeft -= 1
-        timerLable.text = "\(timeLeft)"
+        timerLable.text = "00:\(timeLeft)"
         
         if timeLeft <= 0 {
             timer?.invalidate()
+            timerIsValidate = true
             timer = nil
             
             if streakCount > 0 {
@@ -120,9 +121,12 @@ class QuestionsViewController: UIViewController {
         currentQuestionNo = 0
         self.questionList = self.questionList.shuffled()
         self.streakCount = 0
+        StreakLabel.text = String(streakCount)
+        timerIsValidate = true
+        timer?.invalidate()
         self.setQuestionUI()
-        self.timeLeft = 30
-        self.timer?.fire()
+//        self.timeLeft = 30
+//        self.timer?.fire()
         
     }
     

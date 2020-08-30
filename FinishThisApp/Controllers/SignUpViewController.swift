@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseFirestore
 import FirebaseAuth
+import SVProgressHUD
 
 class SignUpViewController: ViewController {
 
@@ -75,7 +76,7 @@ class SignUpViewController: ViewController {
         guard let userAuth = Auth.auth().currentUser else{return}
         
         userAuth.reload { (error) in
-            
+            SVProgressHUD.show()
             switch userAuth.isEmailVerified {
             case true:
                 print("User Email is verified")
@@ -86,6 +87,7 @@ class SignUpViewController: ViewController {
                                 user.email = self.emailTF.text!
                                 user.password = self.passwordTF.text!
                                 db.add(user: user)
+                SVProgressHUD.dismiss()
                 let sb = UIStoryboard(name: "Home",bundle: nil)
                 if let HomeVC = sb.IIVC(vc: HomeViewController(),id: "Home_VC"){
                     self.navigationController?.pushViewController(HomeVC, animated: true)
@@ -93,7 +95,7 @@ class SignUpViewController: ViewController {
                 
                 
             case false:
-                
+                SVProgressHUD.dismiss()
                 self.Alert(Message: "You did'nt verify your email\nkindly re-enter your email", title: "Oops..!")
                 print("User is not verified")
                 self.verifyBtn.isHidden = true

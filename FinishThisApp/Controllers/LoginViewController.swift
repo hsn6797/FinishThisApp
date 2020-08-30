@@ -68,6 +68,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     
     func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+         SVProgressHUD.show()
         if error != nil{
             print(error)
             return
@@ -77,6 +78,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                 print("Cancelled")
             }
             else{
+                
                 let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 
                 Auth.auth().signIn(with: credential) { (user, error) in
@@ -95,7 +97,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     user.email = self.emailTF.text!
                     user.password = self.passwordTF.text!
                     db.add(user: user)
-                    
+                    SVProgressHUD.dismiss()
                     let sb = UIStoryboard(name: "Home",bundle: nil)
                     if let homeVC = sb.IIVC(vc: HomeViewController(),id: "Home_VC"){
                         self.navigationController?.pushViewController(homeVC, animated: true)
@@ -118,6 +120,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
       let password = passwordTF.text
         
            if email != "" && password != ""{
+            SVProgressHUD.show()
             
             Auth.auth().signIn(withEmail: email!, password: password!) { [weak self] authResult, error in
                 
@@ -136,7 +139,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     print("Username is:  --> "+user.userName)
                 })
                 
-                
+                SVProgressHUD.dismiss()
                 let sb = UIStoryboard(name: "Home",bundle: nil)
                 if let homeVC = sb.IIVC(vc: HomeViewController(),id: "Home_VC"){
                     strongSelf.navigationController?.pushViewController(homeVC, animated: true)
