@@ -50,9 +50,9 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
                     self.navigationController?.pushViewController(homeVC, animated: true)
             }
         }
-            
+
         else {
-    
+
         }
         
         
@@ -163,6 +163,10 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBAction func FacebookB(_ sender: UIButton) {
     }
     @IBAction func LoginB(_ sender: UIButton) {
+        
+        
+        
+        
         presentLoginController()
     }
 

@@ -13,7 +13,7 @@ import MessageUI
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate
  {
  
-    
+    let controller = MFMailComposeViewController()
     var quizList: [Quiz] = []
     
     var USERID = ""
@@ -106,12 +106,14 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         print("contact Clicked")
 
         
-        if (MFMessageComposeViewController.canSendText()) {
-            let controller = MFMessageComposeViewController()
-            controller.body = ""
-            controller.recipients = ["Enter your Email here!"]
-            controller.subject = "FinishThis"//Here goes whom you wants to send the message
-            controller.messageComposeDelegate = self as? MFMessageComposeViewControllerDelegate
+        if (MFMailComposeViewController.canSendMail()) {
+            
+            controller.setSubject("Finish This app")
+            controller.setToRecipients(["Asadullah9555@gmail.com"])
+            controller.setMessageBody("Type you message", isHTML: false)
+            
+            //Here goes whom you wants to send the message
+            controller.mailComposeDelegate = self as! MFMailComposeViewControllerDelegate
             self.present(controller, animated: true, completion: nil)
         }
         //This is just for testing purpose as when you run in the simulator, you cannot send the message.
@@ -122,10 +124,15 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
     
-    func messageComposeViewController(controller:
-        MFMessageComposeViewController!, didFinishWithResult result: MessageComposeResult) {
-        //Displaying the message screen with animation.
-        //self.dismiss(animated: true, completion: nil)
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        if error != nil {
+            print("Done")
+
+        }
+        else{
+            print("Not Done")
+            controller.dismiss(animated: true, completion: nil)
+        }
     }
     
     func AboutClicked(alert:UIAlertAction){

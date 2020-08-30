@@ -362,7 +362,7 @@ class QuestionsViewController: UIViewController {
             
             Firestore.firestore().leaderboardExist(quizName: lUser.quizName, userName: lUser.userName, completionHandler: {
                 leaderU in
-                print("HAAAAAANNNN JIIIIII:::::::::::: "+(leaderU?.leadID)!)
+              //  print("HAAAAAANNNN JIIIIII:::::::::::: "+(leaderU?.leadID)!)
                 if let lu = leaderU {
                     print("mil gaya " + lu.leadID)
                     lUser.leadID = lu.leadID

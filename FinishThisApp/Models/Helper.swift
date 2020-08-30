@@ -13,7 +13,6 @@ struct Questions {
     var WRONG_ANSWER_2 = ""
     var WRONG_ANSWER_3 = ""
 
-    
 }
 
 
