@@ -77,13 +77,17 @@ extension Firestore {
     
     func leaderboardExist(quizName: String, userName: String, completionHandler: @escaping (leaderUser?) -> ()){
         
+        let myGroup = DispatchGroup()
+        myGroup.enter()
+        
+        var lUser: leaderUser? = nil
+
         self.leaderboards.whereField("quizName", isEqualTo: quizName).whereField("userName", isEqualTo: userName).getDocuments() {(querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
-                completionHandler(nil)
+                return
             }
             else {
-                var lUser = leaderUser()
                 for document in querySnapshot!.documents {
                     print("\(document.documentID) => \(document.data())")
                     
@@ -98,11 +102,14 @@ extension Firestore {
                     break
                     
                 }
-                completionHandler(lUser)
-                
             }
+            myGroup.leave()
         }
-        completionHandler(nil)
+        
+        myGroup.notify(queue: .main) {
+            print("Got from Firebase")
+            completionHandler(lUser)
+        }
 
     }
     

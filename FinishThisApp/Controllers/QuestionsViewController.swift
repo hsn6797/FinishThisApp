@@ -148,8 +148,9 @@ class QuestionsViewController: UIViewController {
     @objc func alerOnFinishbtn (_:UIAlertAction){
         if streakCount > 0 {
             putScoreInLeaderboard()
+        }else{
+            self.navigationController?.popViewController(animated: true)
         }
-        self.navigationController?.popViewController(animated: true)
     }
     
     
@@ -282,7 +283,6 @@ class QuestionsViewController: UIViewController {
     
     
     // Submit Button
-    
     @IBAction func SubmitBtn(_ sender: Any) {
         if isCorrect {
             if currentQuestionNo < self.questionList.count {
@@ -363,20 +363,22 @@ class QuestionsViewController: UIViewController {
             Firestore.firestore().leaderboardExist(quizName: lUser.quizName, userName: lUser.userName, completionHandler: {
                 leaderU in
               //  print("HAAAAAANNNN JIIIIII:::::::::::: "+(leaderU?.leadID)!)
-                if let lu = leaderU {
-                    print("mil gaya " + lu.leadID)
-                    lUser.leadID = lu.leadID
-                    Firestore.firestore().add(lUser: lUser)
-                }else{
+                guard let lu = leaderU else {
                     print("ni mila")
                     lUser.leadID = String(Int.random(in: 0..<1000)) + currentUser.uid  + String(Int.random(in: 0..<800))
                     Firestore.firestore().add(lUser: lUser)
+                    return
+                    
                 }
+                print("mil gaya " + lu.leadID)
+                lUser.leadID = lu.leadID
+                Firestore.firestore().add(lUser: lUser)
+                
+                
                 
             })
-
+            self.navigationController?.popViewController(animated: true)
         })
-        self.navigationController?.popViewController(animated: true)
 
     }
     

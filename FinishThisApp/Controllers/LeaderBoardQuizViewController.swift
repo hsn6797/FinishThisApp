@@ -55,6 +55,7 @@ class LeaderBoardQuizViewController: UIViewController,UITableViewDelegate,UITabl
         
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         print("Quiz Button Pressed -> " + self.quizList[indexPath.row].QuizName )
 
         let sb = UIStoryboard(name: "Home",bundle: nil)

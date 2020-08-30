@@ -31,7 +31,8 @@ class LBHViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
     func loadAllLeaderboards(){
         Firestore.firestore().getLeaderboardsQuizName(quizObj.QuizName, completionHandler: {
             leaderboards in
-            self.leaderboardList = leaderboards
+            self.leaderboardList = leaderboards.sorted(by: { $0.streak > $1.streak })
+            
             self.LBH_tableView.reloadData()
             
         })
@@ -43,6 +44,10 @@ class LBHViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
     }
     
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.leaderboardList.count
     }
