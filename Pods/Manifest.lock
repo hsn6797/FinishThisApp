@@ -140,7 +140,7 @@ DEPENDENCIES:
   - SVProgressHUD
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - Bolts
     - BoringSSL-GRPC
     - ChameleonFramework
@@ -194,4 +194,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: af102e362cdf5ce321d591cb11e482dfa658b7bf
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.9.3
