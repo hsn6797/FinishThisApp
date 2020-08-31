@@ -324,19 +324,28 @@ class QuestionsViewController: UIViewController {
     // Submit Button
     @IBAction func SubmitBtn(_ sender: Any) {
         
-        if interstitial.isReady {
-            interstitial.present(fromRootViewController: self)
-        } else {
-            print("Ad wasn't ready")
-        }
+        self.createAndLoadInterstitial()
+
+        
+        
     
         if isCorrect {
             if currentQuestionNo < self.questionList.count {
+                
                 
                 self.streakCount += 1
                 self.StreakLabel.text = String(self.streakCount)
                 
                 self.currentQuestionNo += 1
+                
+                if currentQuestionNo % 3 == 0{
+                    if interstitial.isReady {
+                        interstitial.present(fromRootViewController: self)
+                    } else {
+                        print("Ad wasn't ready")
+                        // self.createAndLoadInterstitial()
+                    }
+                }
                 setQuestionUI()
             }
             else{
@@ -344,7 +353,7 @@ class QuestionsViewController: UIViewController {
             }
         }else{
             // Save Information in DB userName with Score
-            
+          //  interstitial.present(fromRootViewController: self)
             self.AlertOnFinish(Message: "you failed the quiz with result: "+String(streakCount), title: "Better luck next time")
 }
         

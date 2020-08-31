@@ -52,9 +52,9 @@ class SignUpViewController:UIViewController {
                     
                     result!.user.sendEmailVerification { (error) in
                         guard let error = error else{
-                            self.Create_button.isEnabled = false
+                            self.Create_button.isHidden = true
                             self.verifyBtn.isHidden = false
-                            self.Alert(Message: "Please check your email and click the verfication link that we've sent you \n then Press Verify Email to Proceed", title: "Email Verification")
+                            self.Alert(Message: "Please check your email and click the verfication link that we've sent you \n then Press Create to Proceed", title: "Email Verification")
                             return print("Verfication sent")
                             
                         }
@@ -99,7 +99,7 @@ class SignUpViewController:UIViewController {
                 self.Alert(Message: "You did'nt verify your email\nkindly re-enter your email", title: "Oops..!")
                 print("User is not verified")
                 self.verifyBtn.isHidden = true
-                self.Create_button.isEnabled = true
+                self.Create_button.isHidden = false
                 self.emailTF.text = ""
                 self.passwordTF.text = ""
                 

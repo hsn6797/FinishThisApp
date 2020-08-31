@@ -149,6 +149,8 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
             Auth.auth().signIn(withEmail: email!, password: password!) { [weak self] authResult, error in
                 
                 if(error != nil){
+                    SVProgressHUD.dismiss()
+                    self?.showToast(message: "Invalid email or password")
                     return
                 }
                 

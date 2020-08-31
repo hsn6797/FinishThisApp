@@ -214,6 +214,30 @@ class Helper{
     
 } // End Helper Class
 
+
+extension UIViewController {
+    
+    func showToast(message : String) {
+        
+        let toastLabel = UILabel(frame: CGRect(x:40, y: 480, width: 300, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = UIFont(name:"FontAwesome",size:15)
+        toastLabel.textAlignment = .center;
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+    
+}
+
 // MARK: - Date Time formater used in API Parameters
 extension DateFormatter{
     static let iso8601Full :DateFormatter = {
@@ -424,6 +448,8 @@ extension Sequence {
     func group<U: Hashable>(by key: (Iterator.Element) -> U) -> [U:[Iterator.Element]] {
         return Dictionary.init(grouping: self, by: key)
     }
+    
+
     
     
     

@@ -29,7 +29,7 @@ class EditProfileViewController: UIViewController {
         self.navigationItem.title = "Edit profile"
         
         if FBSDKAccessToken.current() != nil {
-            Alert(Message: "", title: "Logined from Facebook")
+            Alert(Message: "Can't Update", title: "Login from Facebook")
         }else{
             if Auth.auth().currentUser != nil{
                 CurrentUID = (Auth.auth().currentUser?.uid)!
@@ -77,6 +77,7 @@ class EditProfileViewController: UIViewController {
         currentUser.updateEmail(to: EmailTxt.text!){ error in
             if let error = error {
                 error.errorMesssage()
+                self.showToast(message: "Couldn't Update")
                 return
             } else {
                 // Email updated.
@@ -91,10 +92,23 @@ class EditProfileViewController: UIViewController {
                         user.userID = currentUser.uid
                         user.userName = self.userName.text!
                         Firestore.firestore().add(user: user)
+                        self.Alertpop(Message: "Username and password updated", title: "Success")
+                        
                     }
                 }
             }
         }
         
+    }
+    
+    
+    func Alertpop (Message: String,title:String){
+        
+        let alert = UIAlertController(title: title, message: Message, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: UpdatePop))
+        self.present(alert, animated: true, completion: nil)
+    }
+    @objc func UpdatePop(_:UIAlertAction){
+        self.navigationController?.popViewController(animated: true)
     }
 }
