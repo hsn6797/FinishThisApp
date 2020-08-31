@@ -76,6 +76,7 @@ PODS:
     - FirebaseAuthInterop (~> 1.0)
     - FirebaseCore (~> 5.2)
     - GTMSessionFetcher/Core (~> 1.1)
+  - Google-Mobile-Ads-SDK (7.41.0)
   - GoogleAppMeasurement (5.6.0):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -135,6 +136,7 @@ DEPENDENCIES:
   - Firebase/Auth (~> 5.17.0)
   - Firebase/Firestore (~> 5.17.0)
   - Firebase/Storage (~> 5.17.0)
+  - Google-Mobile-Ads-SDK
   - SVProgressHUD
 
 SPEC REPOS:
@@ -153,6 +155,7 @@ SPEC REPOS:
     - FirebaseFirestore
     - FirebaseInstanceID
     - FirebaseStorage
+    - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUtilities
     - "gRPC-C++"
@@ -178,6 +181,7 @@ SPEC CHECKSUMS:
   FirebaseFirestore: e95af4fe30552092d6e72a8f97ea475d93891b75
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
   FirebaseStorage: 29075f874c2b3cf61e5221a62c4ceefc809e5412
+  Google-Mobile-Ads-SDK: 101ce89b94fdf60ec64ba7b6e9b9d812dc765936
   GoogleAppMeasurement: 008e04ecd8efedd97a693aea8634aefe220bd26e
   GoogleUtilities: 04fce34bcd5620c1ee76fb79172105c74a4df335
   "gRPC-C++": e76441995900ac90e9bd98644ab4733f12521edf
@@ -188,6 +192,6 @@ SPEC CHECKSUMS:
   Protobuf: 3dac39b34a08151c6d949560efe3f86134a3f748
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 829d50dbb97f22304927cd98ab8d46c1d9a6fe11
+PODFILE CHECKSUM: af102e362cdf5ce321d591cb11e482dfa658b7bf
 
 COCOAPODS: 1.7.5

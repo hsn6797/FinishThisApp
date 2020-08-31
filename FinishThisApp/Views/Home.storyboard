@@ -45,10 +45,10 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="64" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dvL-CE-WTV">
-                                        <rect key="frame" x="34" y="124" width="274" height="464"/>
+                                        <rect key="frame" x="34" y="124" width="274" height="434"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="464" id="0N1-kf-u7s"/>
+                                            <constraint firstAttribute="height" constant="434" id="0N1-kf-u7s"/>
                                             <constraint firstAttribute="width" constant="274" id="6t6-NZ-dLm"/>
                                         </constraints>
                                         <prototypes>
@@ -102,18 +102,29 @@
                                             <outlet property="delegate" destination="WVB-8f-olb" id="RJL-sg-alY"/>
                                         </connections>
                                     </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20Y-Vd-5at">
+                                        <rect key="frame" x="21" y="566" width="300" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="3nF-UN-6e3"/>
+                                            <constraint firstAttribute="width" constant="300" id="cih-x8-Zbs"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="dvL-CE-WTV" secondAttribute="trailing" constant="35" id="0Lb-Q2-czQ"/>
+                                    <constraint firstItem="20Y-Vd-5at" firstAttribute="top" secondItem="dvL-CE-WTV" secondAttribute="bottom" constant="8" id="7VL-OP-8G1"/>
                                     <constraint firstAttribute="height" constant="627" id="9dh-2J-LMz"/>
                                     <constraint firstItem="dvL-CE-WTV" firstAttribute="leading" secondItem="DX6-lj-WM7" secondAttribute="leading" constant="34" id="BhZ-Nl-J9Y"/>
                                     <constraint firstItem="dvL-CE-WTV" firstAttribute="top" secondItem="JW0-Sc-Ugy" secondAttribute="bottom" constant="16" id="LsF-ow-9OP"/>
                                     <constraint firstAttribute="width" constant="343" id="N60-pm-QoF"/>
+                                    <constraint firstItem="20Y-Vd-5at" firstAttribute="leading" secondItem="DX6-lj-WM7" secondAttribute="leading" constant="21" id="P4Z-Ye-Fku"/>
                                     <constraint firstAttribute="trailing" secondItem="JW0-Sc-Ugy" secondAttribute="trailing" constant="35" id="S7D-Vi-oLi"/>
+                                    <constraint firstAttribute="trailing" secondItem="20Y-Vd-5at" secondAttribute="trailing" constant="22" id="Vqz-Ef-oue"/>
                                     <constraint firstItem="JW0-Sc-Ugy" firstAttribute="top" secondItem="DX6-lj-WM7" secondAttribute="top" constant="54" id="X0e-3o-CcW"/>
                                     <constraint firstItem="JW0-Sc-Ugy" firstAttribute="leading" secondItem="DX6-lj-WM7" secondAttribute="leading" constant="34" id="bCt-sn-U3O"/>
-                                    <constraint firstAttribute="bottom" secondItem="dvL-CE-WTV" secondAttribute="bottom" constant="39" id="uWD-Fm-SIt"/>
+                                    <constraint firstAttribute="bottom" secondItem="20Y-Vd-5at" secondAttribute="bottom" constant="11" id="csz-Jg-2wt"/>
+                                    <constraint firstAttribute="bottom" secondItem="dvL-CE-WTV" secondAttribute="bottom" constant="69" id="uWD-Fm-SIt"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -122,7 +133,7 @@
                             <constraint firstItem="DX6-lj-WM7" firstAttribute="centerX" secondItem="FQa-sm-uvE" secondAttribute="centerX" id="FT9-XH-xCs"/>
                             <constraint firstItem="DX6-lj-WM7" firstAttribute="leading" secondItem="BLg-wS-HTm" secondAttribute="leading" constant="16" id="WaW-x0-ARx"/>
                             <constraint firstItem="DX6-lj-WM7" firstAttribute="top" secondItem="BLg-wS-HTm" secondAttribute="top" constant="1" id="iuf-VF-3D9"/>
-                            <constraint firstItem="DX6-lj-WM7" firstAttribute="centerY" secondItem="FQa-sm-uvE" secondAttribute="centerY" id="j4f-Ob-20n"/>
+                            <constraint firstItem="DX6-lj-WM7" firstAttribute="centerY" secondItem="FQa-sm-uvE" secondAttribute="centerY" constant="1" id="j4f-Ob-20n"/>
                             <constraint firstItem="BLg-wS-HTm" firstAttribute="trailing" secondItem="DX6-lj-WM7" secondAttribute="trailing" constant="16" id="okZ-xz-xbG"/>
                             <constraint firstItem="BLg-wS-HTm" firstAttribute="bottom" secondItem="DX6-lj-WM7" secondAttribute="bottom" constant="19" id="x2e-HN-VQO"/>
                         </constraints>
@@ -130,11 +141,12 @@
                     </view>
                     <connections>
                         <outlet property="QuizTableViewController" destination="dvL-CE-WTV" id="88b-hQ-q2d"/>
+                        <outlet property="admobHomeView" destination="20Y-Vd-5at" id="j0e-Wl-xEY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7fi-Ok-INK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="919" y="-122"/>
+            <point key="canvasLocation" x="917.60000000000002" y="-122.78860569715144"/>
         </scene>
         <!--About View Controller-->
         <scene sceneID="8ag-0p-29Q">
@@ -639,7 +651,6 @@ We are committed to ensuring that your information is secure. In order to preven
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="321" id="1Hs-GJ-P35"/>
                                     <constraint firstItem="IPY-5W-c9l" firstAttribute="top" secondItem="FlL-xe-eMd" secondAttribute="bottom" constant="27" id="50g-c8-AjZ"/>
@@ -657,20 +668,32 @@ We are committed to ensuring that your information is secure. In order to preven
                                     <constraint firstAttribute="trailing" secondItem="8zf-XH-l7s" secondAttribute="trailing" constant="50" id="u5W-DZ-b3y"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MGQ-bP-vCu">
+                                <rect key="frame" x="39" y="573" width="300" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fqP-65-1Tw"/>
+                                    <constraint firstAttribute="width" constant="300" id="fwz-xi-LJx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="gUv-ed-zaP" firstAttribute="centerX" secondItem="Uin-PU-aXx" secondAttribute="centerX" id="6AT-C0-LJt"/>
                             <constraint firstItem="Ljn-ae-RUU" firstAttribute="trailing" secondItem="gUv-ed-zaP" secondAttribute="trailing" constant="27" id="8P1-zt-O7M"/>
                             <constraint firstItem="gUv-ed-zaP" firstAttribute="centerY" secondItem="Uin-PU-aXx" secondAttribute="centerY" constant="-47" id="NIP-w2-9zS"/>
+                            <constraint firstItem="Ljn-ae-RUU" firstAttribute="bottom" secondItem="MGQ-bP-vCu" secondAttribute="bottom" constant="44" id="Nf8-Cu-E6q"/>
                             <constraint firstItem="gUv-ed-zaP" firstAttribute="top" secondItem="Ljn-ae-RUU" secondAttribute="top" constant="54" id="TsN-vf-WoH"/>
                             <constraint firstItem="gUv-ed-zaP" firstAttribute="leading" secondItem="Ljn-ae-RUU" secondAttribute="leading" constant="27" id="dis-pQ-fzb"/>
+                            <constraint firstItem="MGQ-bP-vCu" firstAttribute="top" secondItem="gUv-ed-zaP" secondAttribute="bottom" constant="74" id="dru-IZ-4v7"/>
                             <constraint firstItem="Ljn-ae-RUU" firstAttribute="bottom" secondItem="gUv-ed-zaP" secondAttribute="bottom" constant="168" id="gMC-Ri-0XW"/>
+                            <constraint firstItem="MGQ-bP-vCu" firstAttribute="leading" secondItem="Ljn-ae-RUU" secondAttribute="leading" constant="39" id="pfG-Ed-Bwz"/>
+                            <constraint firstItem="Ljn-ae-RUU" firstAttribute="trailing" secondItem="MGQ-bP-vCu" secondAttribute="trailing" constant="36" id="y8c-JM-qfs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ljn-ae-RUU"/>
                     </view>
                     <connections>
                         <outlet property="ViewS" destination="gUv-ed-zaP" id="26U-6l-ahd"/>
+                        <outlet property="admobSettingView" destination="MGQ-bP-vCu" id="9Nv-b6-dda"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mnn-MP-Cg0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -713,10 +736,10 @@ We are committed to ensuring that your information is secure. In order to preven
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3Xm-rL-quc">
-                                        <rect key="frame" x="34" y="121" width="274" height="435"/>
+                                        <rect key="frame" x="34" y="121" width="274" height="339"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="435" id="2hU-1J-Brx"/>
+                                            <constraint firstAttribute="height" constant="339" id="2hU-1J-Brx"/>
                                             <constraint firstAttribute="width" constant="274" id="YtJ-fF-udo"/>
                                         </constraints>
                                         <prototypes>
@@ -755,18 +778,29 @@ We are committed to ensuring that your information is secure. In order to preven
                                             <outlet property="delegate" destination="jhh-yx-lsi" id="c15-pk-2Dq"/>
                                         </connections>
                                     </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ILL-NJ-edl">
+                                        <rect key="frame" x="21" y="540" width="300" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Nzq-b0-akp"/>
+                                            <constraint firstAttribute="width" constant="300" id="oNh-Kg-gr8"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="3Xm-rL-quc" firstAttribute="top" secondItem="h8i-9S-lbx" secondAttribute="bottom" constant="17" id="42q-at-a1S"/>
+                                    <constraint firstItem="ILL-NJ-edl" firstAttribute="top" secondItem="3Xm-rL-quc" secondAttribute="bottom" constant="80" id="6hh-9u-pWO"/>
+                                    <constraint firstItem="ILL-NJ-edl" firstAttribute="leading" secondItem="sbv-30-0TK" secondAttribute="leading" constant="21" id="L1j-3u-0Kb"/>
                                     <constraint firstAttribute="trailing" secondItem="3Xm-rL-quc" secondAttribute="trailing" constant="35" id="MQt-7S-a5s"/>
                                     <constraint firstAttribute="trailing" secondItem="h8i-9S-lbx" secondAttribute="trailing" constant="35" id="OoM-H3-ilC"/>
+                                    <constraint firstAttribute="trailing" secondItem="ILL-NJ-edl" secondAttribute="trailing" constant="22" id="U4w-PN-wXu"/>
                                     <constraint firstItem="3Xm-rL-quc" firstAttribute="leading" secondItem="sbv-30-0TK" secondAttribute="leading" constant="34" id="WCZ-SD-taN"/>
                                     <constraint firstItem="h8i-9S-lbx" firstAttribute="leading" secondItem="sbv-30-0TK" secondAttribute="leading" constant="34" id="gWH-GC-XfO"/>
                                     <constraint firstAttribute="height" constant="619" id="gfj-HV-jCG"/>
                                     <constraint firstAttribute="width" constant="343" id="jXq-lI-Hwt"/>
                                     <constraint firstItem="h8i-9S-lbx" firstAttribute="top" secondItem="sbv-30-0TK" secondAttribute="top" constant="50" id="l6S-ny-3Uf"/>
-                                    <constraint firstAttribute="bottom" secondItem="3Xm-rL-quc" secondAttribute="bottom" constant="63" id="yYd-f2-9GD"/>
+                                    <constraint firstAttribute="bottom" secondItem="ILL-NJ-edl" secondAttribute="bottom" constant="29" id="ruS-SJ-srS"/>
+                                    <constraint firstAttribute="bottom" secondItem="3Xm-rL-quc" secondAttribute="bottom" constant="159" id="yYd-f2-9GD"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -776,13 +810,14 @@ We are committed to ensuring that your information is secure. In order to preven
                             <constraint firstItem="sbv-30-0TK" firstAttribute="top" secondItem="g0z-lW-EMx" secondAttribute="top" constant="8" id="OuZ-5b-rym"/>
                             <constraint firstItem="g0z-lW-EMx" firstAttribute="bottom" secondItem="sbv-30-0TK" secondAttribute="bottom" constant="20" id="SXJ-Wf-phP"/>
                             <constraint firstItem="sbv-30-0TK" firstAttribute="leading" secondItem="g0z-lW-EMx" secondAttribute="leading" constant="16" id="Z1F-AD-cWj"/>
-                            <constraint firstItem="sbv-30-0TK" firstAttribute="centerY" secondItem="wcb-LY-GLw" secondAttribute="centerY" id="bbe-OH-GAv"/>
+                            <constraint firstItem="sbv-30-0TK" firstAttribute="centerY" secondItem="wcb-LY-GLw" secondAttribute="centerY" constant="4" id="bbe-OH-GAv"/>
                             <constraint firstItem="g0z-lW-EMx" firstAttribute="trailing" secondItem="sbv-30-0TK" secondAttribute="trailing" constant="16" id="ipe-uE-Kcu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="g0z-lW-EMx"/>
                     </view>
                     <connections>
                         <outlet property="LBQ_tableView" destination="3Xm-rL-quc" id="cYi-K4-lkg"/>
+                        <outlet property="admobLeaderView" destination="ILL-NJ-edl" id="EcI-Id-JQO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7n6-xh-1Bm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -825,11 +860,11 @@ We are committed to ensuring that your information is secure. In order to preven
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="68" estimatedRowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o8k-1Q-GCI">
-                                        <rect key="frame" x="34" y="139" width="274" height="465"/>
+                                        <rect key="frame" x="34" y="139" width="274" height="336"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="274" id="Z7t-yK-LRo"/>
-                                            <constraint firstAttribute="height" constant="465" id="qME-lr-wye"/>
+                                            <constraint firstAttribute="height" constant="336" id="qME-lr-wye"/>
                                         </constraints>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="68" id="hBH-dh-oZC" customClass="LHS_TableViewCell" customModule="FinishThisApp" customModuleProvider="target">
@@ -932,15 +967,26 @@ We are committed to ensuring that your information is secure. In order to preven
                                             <constraint firstAttribute="bottom" secondItem="egc-3b-44y" secondAttribute="bottom" constant="4" id="yxX-22-KaM"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pF-PD-roQ">
+                                        <rect key="frame" x="21" y="550" width="300" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="KKj-A9-Vr4"/>
+                                            <constraint firstAttribute="height" constant="50" id="oje-E2-KFq"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="1bg-OI-VIz"/>
-                                    <constraint firstAttribute="bottom" secondItem="o8k-1Q-GCI" secondAttribute="bottom" constant="23" id="El8-Pr-5Iy"/>
+                                    <constraint firstAttribute="bottom" secondItem="6pF-PD-roQ" secondAttribute="bottom" constant="27" id="6rA-ly-I3q"/>
+                                    <constraint firstAttribute="bottom" secondItem="o8k-1Q-GCI" secondAttribute="bottom" constant="152" id="El8-Pr-5Iy"/>
                                     <constraint firstItem="zBL-Q6-tTg" firstAttribute="top" secondItem="R5P-Gq-aKK" secondAttribute="bottom" constant="16" id="GaR-uO-LZt"/>
                                     <constraint firstAttribute="trailing" secondItem="zBL-Q6-tTg" secondAttribute="trailing" constant="35" id="IBz-Nv-bW5"/>
+                                    <constraint firstItem="6pF-PD-roQ" firstAttribute="top" secondItem="o8k-1Q-GCI" secondAttribute="bottom" constant="75" id="IGI-99-d5b"/>
+                                    <constraint firstAttribute="trailing" secondItem="6pF-PD-roQ" secondAttribute="trailing" constant="22" id="NDw-BJ-CS7"/>
                                     <constraint firstItem="o8k-1Q-GCI" firstAttribute="leading" secondItem="zKf-Wd-p9W" secondAttribute="leading" constant="34" id="RhF-qn-mEW"/>
                                     <constraint firstItem="o8k-1Q-GCI" firstAttribute="top" secondItem="zBL-Q6-tTg" secondAttribute="bottom" constant="8" id="U6V-IH-9mh"/>
+                                    <constraint firstItem="6pF-PD-roQ" firstAttribute="leading" secondItem="zKf-Wd-p9W" secondAttribute="leading" constant="21" id="UdC-fP-Tcc"/>
                                     <constraint firstItem="R5P-Gq-aKK" firstAttribute="top" secondItem="zKf-Wd-p9W" secondAttribute="top" constant="32" id="byb-Ll-Hmq"/>
                                     <constraint firstItem="zBL-Q6-tTg" firstAttribute="leading" secondItem="zKf-Wd-p9W" secondAttribute="leading" constant="34" id="dC0-Wp-ANp"/>
                                     <constraint firstAttribute="trailing" secondItem="o8k-1Q-GCI" secondAttribute="trailing" constant="35" id="lKA-jI-V3Q"/>
@@ -963,6 +1009,7 @@ We are committed to ensuring that your information is secure. In order to preven
                     </view>
                     <connections>
                         <outlet property="LBH_tableView" destination="o8k-1Q-GCI" id="G4B-es-tZj"/>
+                        <outlet property="admobHSView" destination="6pF-PD-roQ" id="iLb-hW-kF9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2zj-gp-ybb" userLabel="First Responder" sceneMemberID="firstResponder"/>

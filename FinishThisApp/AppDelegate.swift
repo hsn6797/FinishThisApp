@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FBSDKCoreKit
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
               FBSDKApplicationDelegate.sharedInstance()?.application(application, didFinishLaunchingWithOptions: launchOptions)
-        FirebaseApp.configure()
+           FirebaseApp.configure()
+           GADMobileAds.sharedInstance().start(completionHandler: nil)
 
 
 

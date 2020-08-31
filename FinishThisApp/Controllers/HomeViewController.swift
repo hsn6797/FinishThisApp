@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseFirestore
 import MessageUI
+import GoogleMobileAds
 
 class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,MFMailComposeViewControllerDelegate
  {
@@ -20,8 +21,28 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
 
     @IBOutlet weak var QuizTableViewController: UITableView!
+    
+    @IBOutlet weak var admobHomeView: UIView!    
+    var bannerView: GADBannerView!
+    
+    var BannerID_3  = "ca-app-pub-3940256099942544/2934735716"
+    let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
+
+    
+    
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        
+        
+        bannerView = GADBannerView(adSize: GadSize)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = BannerID_3
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self as? GADBannerViewDelegate
+        
+        
         
         print("USERIDH:: "+USERID)
         
@@ -59,6 +80,21 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
         })
         
+    }
+    
+    
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        admobHomeView.addSubview(bannerView)
+        
+    }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+        })
     }
     
 

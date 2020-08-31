@@ -9,31 +9,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController storyboardIdentifier="home_vc" id="BYZ-38-t0r" customClass="ViewController" customModule="FinishThisApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAp-4G-5St">
-                                <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="btnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PF6-je-fiw"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="962" y="574"/>
-        </scene>
         <!--LoginViewController-->
         <scene sceneID="vgR-Qd-k8P">
             <objects>
@@ -98,7 +73,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NlT-iq-75Q">
-                                        <rect key="frame" x="35" y="526" width="274" height="59"/>
+                                        <rect key="frame" x="35" y="430" width="274" height="59"/>
                                         <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="274" id="EM1-Zo-InS"/>
@@ -112,8 +87,15 @@
                                             <action selector="SignupB:" destination="vfM-Sk-ych" eventType="touchUpInside" id="W2Z-Nn-sd7"/>
                                         </connections>
                                     </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVr-SC-FGf">
+                                        <rect key="frame" x="21" y="522" width="300" height="50"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="300" id="h4k-7w-Gda"/>
+                                            <constraint firstAttribute="height" constant="50" id="zhw-1o-QHE"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="1k0-XN-mU2"/>
                                     <constraint firstAttribute="trailing" secondItem="AQV-Z6-upO" secondAttribute="trailing" constant="34" id="4zW-lP-6Dh"/>
@@ -121,13 +103,17 @@
                                     <constraint firstItem="9HR-jC-wkP" firstAttribute="top" secondItem="I8R-nK-zeT" secondAttribute="bottom" constant="34.5" id="67U-Ii-3tl"/>
                                     <constraint firstAttribute="trailing" secondItem="5ua-da-to9" secondAttribute="trailing" constant="34" id="8tI-MO-cgK"/>
                                     <constraint firstAttribute="trailing" secondItem="9HR-jC-wkP" secondAttribute="trailing" constant="34" id="Abm-lL-x9u"/>
+                                    <constraint firstItem="hVr-SC-FGf" firstAttribute="leading" secondItem="m5r-y4-WEY" secondAttribute="leading" constant="21" id="C9o-ot-ZrM"/>
                                     <constraint firstAttribute="trailing" secondItem="I8R-nK-zeT" secondAttribute="trailing" constant="34" id="CLD-2S-KTJ"/>
                                     <constraint firstItem="5ua-da-to9" firstAttribute="top" secondItem="9HR-jC-wkP" secondAttribute="bottom" constant="23" id="F6V-oi-drT"/>
                                     <constraint firstItem="I8R-nK-zeT" firstAttribute="leading" secondItem="m5r-y4-WEY" secondAttribute="leading" constant="35" id="KPi-Qd-EOq"/>
+                                    <constraint firstAttribute="trailing" secondItem="hVr-SC-FGf" secondAttribute="trailing" constant="22" id="LQp-FU-Zfg"/>
                                     <constraint firstItem="I8R-nK-zeT" firstAttribute="top" secondItem="m5r-y4-WEY" secondAttribute="top" constant="58" id="RTV-LE-fXw"/>
                                     <constraint firstAttribute="trailing" secondItem="NlT-iq-75Q" secondAttribute="trailing" constant="34" id="Tey-Th-zBL"/>
+                                    <constraint firstAttribute="bottom" secondItem="hVr-SC-FGf" secondAttribute="bottom" constant="36" id="V5X-xA-hKf"/>
                                     <constraint firstItem="9HR-jC-wkP" firstAttribute="leading" secondItem="m5r-y4-WEY" secondAttribute="leading" constant="35" id="gMx-sO-vnn"/>
-                                    <constraint firstAttribute="bottom" secondItem="NlT-iq-75Q" secondAttribute="bottom" constant="23" id="hj4-gv-CR1"/>
+                                    <constraint firstAttribute="bottom" secondItem="NlT-iq-75Q" secondAttribute="bottom" constant="119" id="hj4-gv-CR1"/>
+                                    <constraint firstItem="hVr-SC-FGf" firstAttribute="top" secondItem="NlT-iq-75Q" secondAttribute="bottom" constant="33" id="lEg-Yd-c3L"/>
                                     <constraint firstItem="NlT-iq-75Q" firstAttribute="leading" secondItem="m5r-y4-WEY" secondAttribute="leading" constant="35" id="oLj-tB-H48"/>
                                     <constraint firstAttribute="height" constant="608" id="qoY-8s-cuS"/>
                                     <constraint firstItem="AQV-Z6-upO" firstAttribute="top" secondItem="5ua-da-to9" secondAttribute="bottom" constant="43" id="woY-iF-ymH"/>
@@ -145,6 +131,7 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="bT6-lW-2ft"/>
                     <connections>
+                        <outlet property="MobAdView" destination="hVr-SC-FGf" id="U6d-Uf-bMg"/>
                         <outlet property="emailTF" destination="9HR-jC-wkP" id="c6T-pf-OU1"/>
                         <outlet property="myView" destination="m5r-y4-WEY" id="x8I-pY-Bax"/>
                         <outlet property="passwordTF" destination="5ua-da-to9" id="Yzb-LQ-YQp"/>

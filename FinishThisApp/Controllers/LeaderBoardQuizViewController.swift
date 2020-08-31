@@ -8,15 +8,38 @@
 
 import UIKit
 import FirebaseFirestore
+import GoogleMobileAds
 
 class LeaderBoardQuizViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     var quizList: [Quiz] = []
     
     @IBOutlet weak var LBQ_tableView: UITableView!
+    
+    @IBOutlet weak var admobLeaderView: UIView!
+    
+    var bannerView: GADBannerView!
+    
+    var BannerID_4  = "ca-app-pub-3940256099942544/2934735716"
+    let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
+    
+    
+    
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        
+        
+        bannerView = GADBannerView(adSize: GadSize)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = BannerID_4
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self as? GADBannerViewDelegate
+        
+        
+        
+        
         
         
         let back = UIBarButtonItem(title: "Back", style: .plain, target:self, action: #selector(goBack))
@@ -27,6 +50,27 @@ class LeaderBoardQuizViewController: UIViewController,UITableViewDelegate,UITabl
         // get all quizes list from firebase
         loadAllQuizes()
     }
+    
+    
+    
+    
+    
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        admobLeaderView.addSubview(bannerView)
+        
+    }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+        })
+    }
+    
+    
+    
     
     func loadAllQuizes(){
         Firestore.firestore().getQuezies(completionHandler: {

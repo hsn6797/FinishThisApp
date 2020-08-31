@@ -10,6 +10,7 @@ import UIKit
 import FirebaseFirestore
 import FirebaseAuth
 import FBSDKShareKit
+import  GoogleMobileAds
 
 class QuestionsViewController: UIViewController {
 
@@ -20,6 +21,11 @@ class QuestionsViewController: UIViewController {
     var isCorrect = false
     var streakCount = 0
     var timerIsValidate = false
+    
+    // For Adss
+    var interstitial: GADInterstitial!
+    var InterstitialID = "ca-app-pub-3940256099942544/4411468910"
+
     
     //TIMER
     
@@ -43,6 +49,26 @@ class QuestionsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        // FOR ADS
+        
+//        interstitial = GADInterstitial(adUnitID: InterstitialID )
+//        let request = GADRequest()
+//        interstitial.load(request)
+        
+        interstitial = self.createAndLoadInterstitial()
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+
+        
+        
+        
+        //**********************//
+        
         
         AnswerBtn1.layer.cornerRadius = 10
         AnswerBtn2.layer.cornerRadius = 10
@@ -130,6 +156,15 @@ class QuestionsViewController: UIViewController {
         
     }
     
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        var interstitial = GADInterstitial(adUnitID: InterstitialID)
+        interstitial.delegate = self as? GADInterstitialDelegate
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+
+    
     func Alert (Message: String,title:String){
         
         let alert = UIAlertController(title: title, message: Message, preferredStyle: UIAlertController.Style.alert)
@@ -176,7 +211,7 @@ class QuestionsViewController: UIViewController {
         self.AnswerBtn4.resetButton()
 
         // set Question label
-        QuestuionLabel.text = String(currentQuestionNo + 1) + " - " + self.questionList[self.currentQuestionNo].Question.trimmingCharacters(in: .whitespacesAndNewlines)
+        QuestuionLabel.text=self.questionList[self.currentQuestionNo].Question.trimmingCharacters(in: .whitespacesAndNewlines)
         
         // get wrong answers in list
         var wrongAnswers: [String] = []
@@ -288,6 +323,13 @@ class QuestionsViewController: UIViewController {
     
     // Submit Button
     @IBAction func SubmitBtn(_ sender: Any) {
+        
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+    
         if isCorrect {
             if currentQuestionNo < self.questionList.count {
                 

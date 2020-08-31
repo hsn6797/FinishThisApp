@@ -8,15 +8,40 @@
 
 import UIKit
 import FirebaseFirestore
+import GoogleMobileAds
 class LBHViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
    
 
     var quizObj = Quiz()
     var leaderboardList: [leaderUser] = []
-
+    
+    @IBOutlet weak var admobHSView: UIView!
+    
+    
+    var bannerView: GADBannerView!
+    
+    var BannerID_5  = "ca-app-pub-3940256099942544/2934735716"
+    let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
+    
+    
+    
     @IBOutlet weak var LBH_tableView: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
+        
+        
+        bannerView = GADBannerView(adSize: GadSize)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = BannerID_5
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self as? GADBannerViewDelegate
+        
+        
         
         
         let back = UIBarButtonItem(title: "Back", style: .plain, target:self, action: #selector(goBack))
@@ -26,6 +51,22 @@ class LBHViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
         self.loadAllLeaderboards()
 
         // Do any additional setup after loading the view.
+    }
+    
+    
+    
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        admobHSView.addSubview(bannerView)
+        
+    }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+        })
     }
     
     func loadAllLeaderboards(){

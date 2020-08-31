@@ -12,33 +12,45 @@ import FirebaseFirestore
 import FirebaseAuth
 import FBSDKLoginKit
 import SVProgressHUD
+import GoogleMobileAds
 
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
-    
-    @IBOutlet weak var facebook_Login: UIButton!
+
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
+    @IBOutlet weak var MobAdView: UIView!
+    var bannerView: GADBannerView!
+    
+    var BannerID_1  = "ca-app-pub-3940256099942544/2934735716"
+    let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
     
     
     
-    
-    
-    
-    
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Banner Work Here
+        
+        bannerView = GADBannerView(adSize: GadSize)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = BannerID_1
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self as? GADBannerViewDelegate
+        
+        ////////////////////////****************************//////////////////////////////
 //        
 //        if FBSDKAccessToken.current() != nil{
 //            FBSDKAccessToken.setCurrent(nil)
 //        }
         let loginButton = FBSDKLoginButton()
         myView.addSubview(loginButton)
-        loginButton.frame = CGRect(x: 40, y: 400, width: myView.frame.width - 75, height: 50)
+        loginButton.frame = CGRect(x: 40, y: 350, width: myView.frame.width - 75, height: 50)
         loginButton.delegate = self
         
         if Auth.auth().currentUser != nil {
@@ -54,9 +66,21 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         else {
 
         }
-        
-        
-        }
+    }
+    
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        MobAdView.addSubview(bannerView)
+      
+    }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+        })
+    }
        
         // Do any additional setup after loading the view.
 

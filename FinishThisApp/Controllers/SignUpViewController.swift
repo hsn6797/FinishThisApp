@@ -11,7 +11,7 @@ import FirebaseFirestore
 import FirebaseAuth
 import SVProgressHUD
 
-class SignUpViewController: ViewController {
+class SignUpViewController:UIViewController {
 
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!

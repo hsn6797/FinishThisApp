@@ -35,6 +35,7 @@ class EditProfileViewController: UIViewController {
     }
     
     @objc func goBack(){
+        
         self.navigationController?.popViewController(animated: true)
     }
     

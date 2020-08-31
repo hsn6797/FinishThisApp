@@ -6,6 +6,8 @@ target 'FinishThisApp' do
   use_frameworks!
 
   # Pods for FinishThisApp
+
+   pod 'Google-Mobile-Ads-SDK'
    pod 'FBSDKCoreKit','~> 4.19.0'
    pod 'FBSDKShareKit','~> 4.19.0'
    pod 'FBSDKLoginKit','~> 4.19.0'

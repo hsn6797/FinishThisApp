@@ -9,13 +9,42 @@
 import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
+import GoogleMobileAds
 
 class POPSettingViewController: UIViewController {
 
     @IBOutlet weak var ViewS: UIView!
     
+    
+    @IBOutlet weak var admobSettingView: UIView!
+    
+    var bannerView: GADBannerView!
+    
+    var BannerID_2  = "ca-app-pub-3940256099942544/2934735716"
+    let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
+    
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        
+        bannerView = GADBannerView(adSize: GadSize)
+        addBannerViewToView(bannerView)
+        bannerView.adUnitID = BannerID_2
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self as? GADBannerViewDelegate
+        
+        
+        
         
         let back = UIBarButtonItem(title: "Back", style: .plain, target:self, action: #selector(goBack))
         self.navigationItem.leftBarButtonItem = back
@@ -26,6 +55,24 @@ class POPSettingViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    
+    func addBannerViewToView(_ bannerView: GADBannerView) {
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        admobSettingView.addSubview(bannerView)
+        
+    }
+    
+    func adViewDidReceiveAd(_ bannerView: GADBannerView) {
+        bannerView.alpha = 0
+        UIView.animate(withDuration: 1, animations: {
+            bannerView.alpha = 1
+        })
+    }
+    
+    
     
     @objc func goBack(){
         self.navigationController?.popViewController(animated: true)
