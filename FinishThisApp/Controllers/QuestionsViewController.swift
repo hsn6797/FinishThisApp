@@ -111,7 +111,7 @@ class QuestionsViewController: UIViewController {
             else{
                 self.timerLable.isHidden = true
                 self.timer?.invalidate()
-                self.Alert(Message: "Catch you later !", title: "No Data Available")
+                self.AlertontimeOut(Message: "Catch you later !", title: "No Data Available")
             }
         
             
@@ -138,7 +138,18 @@ class QuestionsViewController: UIViewController {
                 // Save record into DB
                 putScoreInLeaderboard()
             }
-            Alert(Message: "You did'nt answer,\nBetter Luck, Next time", title: "Times Out")
+            AlertontimeOut(Message: "You did'nt answer,\nBetter Luck, Next time", title: "Times Out")
+        }
+    }
+    
+    func show_Ads(){
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+            interstitial = self.createAndLoadInterstitial()
+            self.createAndLoadInterstitial()
+        }else {
+            print("Ad wasn't ready")
+            // self.createAndLoadInterstitial()
         }
     }
     
@@ -165,7 +176,7 @@ class QuestionsViewController: UIViewController {
     }
 
     
-    func Alert (Message: String,title:String){
+    func AlertontimeOut (Message: String,title:String){
         
         let alert = UIAlertController(title: title, message: Message, preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: alerbtn))
@@ -173,6 +184,7 @@ class QuestionsViewController: UIViewController {
     }
     
     @objc func alerbtn (_:UIAlertAction){
+       self.show_Ads()
         self.navigationController?.popViewController(animated: true)
     }
     
@@ -188,6 +200,7 @@ class QuestionsViewController: UIViewController {
         if streakCount > 0 {
             putScoreInLeaderboard()
         }else{
+            self.show_Ads()
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -324,10 +337,7 @@ class QuestionsViewController: UIViewController {
     // Submit Button
     @IBAction func SubmitBtn(_ sender: Any) {
         
-        self.createAndLoadInterstitial()
 
-        
-        
     
         if isCorrect {
             if currentQuestionNo < self.questionList.count {
@@ -338,23 +348,19 @@ class QuestionsViewController: UIViewController {
                 
                 self.currentQuestionNo += 1
                 
-                if currentQuestionNo % 3 == 0{
-                    if interstitial.isReady {
-                        interstitial.present(fromRootViewController: self)
-                    } else {
-                        print("Ad wasn't ready")
-                        // self.createAndLoadInterstitial()
-                    }
-                }
+                print("No isss:::::::::::::: \(currentQuestionNo)")
+                
                 setQuestionUI()
             }
             else{
                 self.AlertOnFinish(Message: "you successfully finished the quiz with result: "+String(streakCount), title: "Congrats!!!")
             }
         }else{
+            
+            
             // Save Information in DB userName with Score
           //  interstitial.present(fromRootViewController: self)
-            self.AlertOnFinish(Message: "you failed the quiz with result: "+String(streakCount), title: "Better luck next time")
+            self.AlertOnFinish(Message: "you got: \(streakCount) marks", title: "Better luck next time")
 }
         
     }
@@ -432,6 +438,7 @@ class QuestionsViewController: UIViewController {
                 
                 
             })
+            self.show_Ads()
             self.navigationController?.popViewController(animated: true)
         })
 

@@ -72,13 +72,13 @@ class LBHViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
     func loadAllLeaderboards(){
         Firestore.firestore().getLeaderboardsQuizName(quizObj.QuizName, completionHandler: {
             leaderboards in
-            self.leaderboardList = leaderboards.sorted(by: { $0.streak > $1.streak })
+            self.leaderboardList = leaderboards.sorted(by:{ Int($0.streak)! > Int($1.streak)!})
             
             self.LBH_tableView.reloadData()
-            
         })
         
     }
+    
     
     @objc func goBack(){
         self.navigationController?.popViewController(animated: true)
