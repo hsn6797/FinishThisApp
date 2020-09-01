@@ -25,7 +25,7 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     @IBOutlet weak var admobHomeView: UIView!    
     var bannerView: GADBannerView!
     
-    var BannerID_3  = "ca-app-pub-3940256099942544/2934735716"
+    var BannerID_3  = "ca-app-pub-0653754342418962/7810175903"
     let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
 
     

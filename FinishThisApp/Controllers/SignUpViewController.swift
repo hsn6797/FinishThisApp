@@ -31,7 +31,23 @@ class SignUpViewController:UIViewController {
         verifyBtn.isHidden = true
         self.navigationItem.title = "Sign Up"
         
+        // TAP gesture
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
+        
+        
+        
+    }
+    
+    @objc func dismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     @IBAction func CreateAccountB(_ sender: UIButton) {

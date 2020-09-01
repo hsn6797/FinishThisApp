@@ -43,17 +43,24 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I8R-nK-zeT">
                                         <rect key="frame" x="35" y="58" width="274" height="53.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GET STARTED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0c-V7-d4T">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GET STARTED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0c-V7-d4T">
                                                 <rect key="frame" x="47" y="10" width="178.5" height="33.5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="KannadaSangamMN-Bold" family="Kannada Sangam MN" pointSize="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="33.5" id="Jlo-uW-hnn"/>
+                                                    <constraint firstAttribute="width" constant="178.5" id="aAj-H7-ayq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="KannadaSangamMN-Bold" family="Kannada Sangam MN" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.24803510308265686" green="0.26933804154396057" blue="0.34843826293945312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="w0c-V7-d4T" secondAttribute="trailing" constant="48.5" id="Nkj-NC-7cK"/>
+                                            <constraint firstItem="w0c-V7-d4T" firstAttribute="top" secondItem="I8R-nK-zeT" secondAttribute="top" constant="10" id="Y5L-r0-t9E"/>
                                             <constraint firstAttribute="height" constant="53.5" id="ZbB-Z4-hgC"/>
+                                            <constraint firstAttribute="bottom" secondItem="w0c-V7-d4T" secondAttribute="bottom" constant="10" id="e5w-eO-0Pt"/>
+                                            <constraint firstItem="w0c-V7-d4T" firstAttribute="leading" secondItem="I8R-nK-zeT" secondAttribute="leading" constant="47" id="fVH-oh-gvN"/>
                                             <constraint firstAttribute="width" constant="274" id="hqf-ON-Y5u"/>
                                         </constraints>
                                     </view>

@@ -20,7 +20,7 @@ class LBHViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
     
     var bannerView: GADBannerView!
     
-    var BannerID_5  = "ca-app-pub-3940256099942544/2934735716"
+    var BannerID_5  = "ca-app-pub-0653754342418962/5184012566"
     let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
     
     

@@ -24,7 +24,7 @@ class QuestionsViewController: UIViewController {
     
     // For Adss
     var interstitial: GADInterstitial!
-    var InterstitialID = "ca-app-pub-3940256099942544/4411468910"
+    var InterstitialID = "ca-app-pub-0653754342418962/2557849225"
 
     
     //TIMER

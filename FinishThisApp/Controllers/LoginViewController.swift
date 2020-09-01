@@ -24,7 +24,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var MobAdView: UIView!
     var bannerView: GADBannerView!
     
-    var BannerID_1  = "ca-app-pub-3940256099942544/2934735716"
+    var BannerID_1  = "ca-app-pub-0653754342418962/9314829262"
     let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
     
     
@@ -66,6 +66,22 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         else {
 
         }
+        // TAP gesture
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        
+        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
+        //tap.cancelsTouchesInView = false
+        
+        view.addGestureRecognizer(tap)
+        
+        
+        
+    }
+    
+    @objc func dismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     
@@ -100,6 +116,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         else{
             if result.isCancelled{
                 print("Cancelled")
+                SVProgressHUD.dismiss()
             }
             else{
                 

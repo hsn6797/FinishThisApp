@@ -20,7 +20,7 @@ class LeaderBoardQuizViewController: UIViewController,UITableViewDelegate,UITabl
     
     var bannerView: GADBannerView!
     
-    var BannerID_4  = "ca-app-pub-3940256099942544/2934735716"
+    var BannerID_4  = "ca-app-pub-0653754342418962/6497094238"
     let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
     
     
