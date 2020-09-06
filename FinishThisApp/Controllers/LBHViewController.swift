@@ -57,8 +57,15 @@ class LBHViewController: UIViewController,UITableViewDataSource,UITableViewDeleg
     
     
     func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
+  
         admobHSView.addSubview(bannerView)
+        
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        bannerView.heightAnchor.constraint(equalTo: admobHSView.heightAnchor).isActive = true
+        bannerView.widthAnchor.constraint(equalTo: admobHSView.widthAnchor).isActive = true
+        bannerView.leadingAnchor.constraint(equalTo: admobHSView.leadingAnchor).isActive = true
+        bannerView.trailingAnchor.constraint(equalTo: admobHSView.trailingAnchor).isActive = true
         
     }
     

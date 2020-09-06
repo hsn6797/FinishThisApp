@@ -57,8 +57,14 @@ class LeaderBoardQuizViewController: UIViewController,UITableViewDelegate,UITabl
     
     
     func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
         admobLeaderView.addSubview(bannerView)
+        
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        bannerView.heightAnchor.constraint(equalTo: admobLeaderView.heightAnchor).isActive = true
+        bannerView.widthAnchor.constraint(equalTo: admobLeaderView.widthAnchor).isActive = true
+        bannerView.leadingAnchor.constraint(equalTo: admobLeaderView.leadingAnchor).isActive = true
+        bannerView.trailingAnchor.constraint(equalTo: admobLeaderView.trailingAnchor).isActive = true
         
     }
     

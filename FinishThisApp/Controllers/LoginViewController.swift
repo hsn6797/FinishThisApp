@@ -17,7 +17,7 @@ import GoogleMobileAds
 
 class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
 
-    @IBOutlet weak var myView: UIView!
+    @IBOutlet weak var FBView: UIView!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
     
@@ -25,7 +25,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     var bannerView: GADBannerView!
     
     var BannerID_1  = "ca-app-pub-0653754342418962/9314829262"
-    let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
+    let GadSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 50))
     
     
     
@@ -44,13 +44,19 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         bannerView.delegate = self as? GADBannerViewDelegate
         
         ////////////////////////****************************//////////////////////////////
-//        
-//        if FBSDKAccessToken.current() != nil{
-//            FBSDKAccessToken.setCurrent(nil)
-//        }
+
         let loginButton = FBSDKLoginButton()
-        myView.addSubview(loginButton)
-        loginButton.frame = CGRect(x: 40, y: 350, width: myView.frame.width - 75, height: 50)
+        FBView.addSubview(loginButton)
+
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        loginButton.heightAnchor.constraint(equalTo: FBView.heightAnchor).isActive = true
+        loginButton.widthAnchor.constraint(equalTo: FBView.widthAnchor).isActive = true
+        loginButton.leadingAnchor.constraint(equalTo: FBView.leadingAnchor).isActive = true
+        loginButton.trailingAnchor.constraint(equalTo: FBView.trailingAnchor).isActive = true
+        
+        
+        //loginButton.center = FBView.center
         loginButton.delegate = self
         
         if Auth.auth().currentUser != nil {
@@ -86,8 +92,15 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
     
     
     func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        
         MobAdView.addSubview(bannerView)
+
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        bannerView.heightAnchor.constraint(equalTo: MobAdView.heightAnchor).isActive = true
+        bannerView.widthAnchor.constraint(equalTo: MobAdView.widthAnchor).isActive = true
+        bannerView.leadingAnchor.constraint(equalTo: MobAdView.leadingAnchor).isActive = true
+        bannerView.trailingAnchor.constraint(equalTo: MobAdView.trailingAnchor).isActive = true
       
     }
     
@@ -206,8 +219,7 @@ class LoginViewController: UIViewController, FBSDKLoginButtonDelegate {
         }
     }
     
-    @IBAction func FacebookB(_ sender: UIButton) {
-    }
+ 
     @IBAction func LoginB(_ sender: UIButton) {
         
         

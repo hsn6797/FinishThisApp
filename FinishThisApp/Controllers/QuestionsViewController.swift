@@ -162,9 +162,6 @@ class QuestionsViewController: UIViewController {
         timerIsValidate = true
         timer?.invalidate()
         self.setQuestionUI()
-//        self.timeLeft = 30
-//        self.timer?.fire()
-        
     }
     
     

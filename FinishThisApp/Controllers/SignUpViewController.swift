@@ -16,7 +16,6 @@ class SignUpViewController:UIViewController {
     @IBOutlet weak var usernameTF: UITextField!
     @IBOutlet weak var emailTF: UITextField!
     @IBOutlet weak var passwordTF: UITextField!
-    @IBOutlet weak var errorL: UILabel!
     @IBOutlet weak var Create_button: UIButton!
     @IBOutlet weak var verifyBtn: UIButton!
     
@@ -28,7 +27,7 @@ class SignUpViewController:UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        verifyBtn.isHidden = true
+        Create_button.isHidden = true
         self.navigationItem.title = "Sign Up"
         
         // TAP gesture
@@ -50,7 +49,7 @@ class SignUpViewController:UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func CreateAccountB(_ sender: UIButton) {
+    @IBAction func VerifyEmail(_ sender: UIButton) {
         
  
         let emailText = emailTF.text!
@@ -68,8 +67,8 @@ class SignUpViewController:UIViewController {
                     
                     result!.user.sendEmailVerification { (error) in
                         guard let error = error else{
-                            self.Create_button.isHidden = true
-                            self.verifyBtn.isHidden = false
+                            self.Create_button.isHidden = false
+                            self.verifyBtn.isHidden = true
                             self.Alert(Message: "Please check your email and click the verfication link that we've sent you \n then Press Create to Proceed", title: "Email Verification")
                             return print("Verfication sent")
                             

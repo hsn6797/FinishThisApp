@@ -26,7 +26,6 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var bannerView: GADBannerView!
     
     var BannerID_3  = "ca-app-pub-0653754342418962/7810175903"
-    let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
 
     
     
@@ -34,7 +33,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
         
         
-        
+        let GadSize = GADAdSizeFromCGSize(CGSize(width:admobHomeView.frame.width, height: admobHomeView.frame.height))
+
         bannerView = GADBannerView(adSize: GadSize)
         addBannerViewToView(bannerView)
         bannerView.adUnitID = BannerID_3
@@ -85,8 +85,14 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
         admobHomeView.addSubview(bannerView)
+
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        bannerView.heightAnchor.constraint(equalTo: admobHomeView.heightAnchor).isActive = true
+        bannerView.widthAnchor.constraint(equalTo: admobHomeView.widthAnchor).isActive = true
+        bannerView.leadingAnchor.constraint(equalTo:admobHomeView.leadingAnchor).isActive = true
+        bannerView.trailingAnchor.constraint(equalTo:admobHomeView.trailingAnchor).isActive = true
         
     }
     
@@ -145,8 +151,8 @@ class HomeViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         if (MFMailComposeViewController.canSendMail()) {
             
             controller.setSubject("Finish This app")
-            controller.setToRecipients(["Asadullah9555@gmail.com"])
-            controller.setMessageBody("Type you message", isHTML: false)
+            controller.setToRecipients(["finishthisapp@gmail.com"])
+            controller.setMessageBody("Type your message", isHTML: false)
             
             //Here goes whom you wants to send the message
             controller.mailComposeDelegate = self as! MFMailComposeViewControllerDelegate

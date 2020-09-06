@@ -13,22 +13,11 @@ import GoogleMobileAds
 
 class POPSettingViewController: UIViewController {
 
-    @IBOutlet weak var ViewS: UIView!
-    
-    
     @IBOutlet weak var admobSettingView: UIView!
     
     var bannerView: GADBannerView!
-    
     var BannerID_2  = "ca-app-pub-0653754342418962/2749420914"
-    let GadSize = GADAdSizeFromCGSize(CGSize(width: 300, height: 50))
-    
-    
-    
-    
-    
-    
-    
+    let GadSize = GADAdSizeFromCGSize(CGSize(width: 320, height: 50))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,7 +40,6 @@ class POPSettingViewController: UIViewController {
         self.navigationItem.title = "Settings"
 
         
-        ViewS.layer.cornerRadius = 10
 
         // Do any additional setup after loading the view.
     }
@@ -60,8 +48,14 @@ class POPSettingViewController: UIViewController {
     
     
     func addBannerViewToView(_ bannerView: GADBannerView) {
-        bannerView.translatesAutoresizingMaskIntoConstraints = false
         admobSettingView.addSubview(bannerView)
+        
+        bannerView.translatesAutoresizingMaskIntoConstraints = false
+        
+        bannerView.heightAnchor.constraint(equalTo: admobSettingView.heightAnchor).isActive = true
+        bannerView.widthAnchor.constraint(equalTo: admobSettingView.widthAnchor).isActive = true
+        bannerView.leadingAnchor.constraint(equalTo: admobSettingView.leadingAnchor).isActive = true
+        bannerView.trailingAnchor.constraint(equalTo: admobSettingView.trailingAnchor).isActive = true
         
     }
     
@@ -94,14 +88,11 @@ class POPSettingViewController: UIViewController {
         
         
     }
-    @IBAction func backbtn(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-        
-    }
     
     private func SignOut(){
         
         guard Auth.auth().currentUser != nil else {
+            self.navigationController?.popToRootViewController(animated: true)
             return
         }
         

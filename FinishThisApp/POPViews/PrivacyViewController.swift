@@ -11,30 +11,18 @@ import UIKit
 class PrivacyViewController: UIViewController {
 
     @IBOutlet weak var PrivacyTextView: UITextView!
-    
-    
-    
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         
         let back = UIBarButtonItem(title: "Back", style: .plain, target:self, action: #selector(goBack))
         self.navigationItem.leftBarButtonItem = back
         self.navigationItem.title = "Privacy"
-
         // Do any additional setup after loading the view.
     }
     @objc func goBack(){
+        
         self.navigationController?.popViewController(animated: true)
+                       
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
