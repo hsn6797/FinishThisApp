@@ -21,6 +21,7 @@ class QuestionsViewController: UIViewController {
     var isCorrect = false
     var streakCount = 0
     var timerIsValidate = false
+    var buttonPressedIndex = -1
     
     // For Adss
     var interstitial: GADInterstitial!
@@ -31,7 +32,6 @@ class QuestionsViewController: UIViewController {
     
     var timer:Timer?
     var timeLeft = 30
-
     
     @IBOutlet weak var timerLable: UILabel!
     
@@ -246,118 +246,100 @@ class QuestionsViewController: UIViewController {
         }
     }
     
+    func changeButtonsState(){
+        for ind in 0..<self.Buttons.count {
+            if ind == self.buttonPressedIndex{
+                self.Buttons[ind].disableButton()
+            }else{
+                self.Buttons[ind].resetButton()
+            }
+        }
+    }
     
-    @IBAction func AnswerBtn1(_ sender: Any) {
+    @IBAction func AnswerBtn1(_ sender: UIButton) {
         timer?.invalidate()
         timerIsValidate = true
+        self.buttonPressedIndex = sender.tag
         
-        if AnswerBtn1.titleLabel?.text == self.questionList[self.currentQuestionNo].correctAns{
-            AnswerBtn1.changeColor(color: UIColor.green, text: "Correct")
-            isCorrect = true
-            AnswerBtn4.disableButton()
-            AnswerBtn2.disableButton()
-            AnswerBtn3.disableButton()
-            AnswerBtn1.disableButton()
-        }else{
-            AnswerBtn1.changeColor(color: UIColor.red, text: "Wrong")
-            AnswerBtn4.disableButton()
-            AnswerBtn2.disableButton()
-            AnswerBtn3.disableButton()
-            AnswerBtn1.disableButton()
-        }
+        changeButtonsState()
+//        if AnswerBtn1.titleLabel?.text == self.questionList[self.currentQuestionNo].correctAns{
+//            //AnswerBtn1.changeColor(color: UIColor(red: 0.24, green: 0.26, blue: 0.33, alpha: 1.00), text: "Correct")
+//            isCorrect = true
+//            AnswerBtn4.disableButton()
+//            AnswerBtn2.disableButton()
+//            AnswerBtn3.disableButton()
+//            AnswerBtn1.disableButton()
+//        }else{
+//          //  AnswerBtn1.changeColor(color: UIColor.red, text: "Wrong")
+//            AnswerBtn4.disableButton()
+//            AnswerBtn2.disableButton()
+//            AnswerBtn3.disableButton()
+//            AnswerBtn1.disableButton()
+//        }
     }
     
-    @IBAction func AnswerBtn2(_ sender: Any) {
+    @IBAction func AnswerBtn2(_ sender: UIButton) {
         timer?.invalidate()
         timerIsValidate = true
+        self.buttonPressedIndex = sender.tag
+
+        changeButtonsState()
 
 
-        if AnswerBtn2.titleLabel?.text == self.questionList[self.currentQuestionNo].correctAns{
-            AnswerBtn2.changeColor(color: UIColor.green, text: "Correct")
-            isCorrect = true
-            AnswerBtn2.disableButton()
-            AnswerBtn3.disableButton()
-            AnswerBtn1.disableButton()
-            AnswerBtn4.disableButton()
-        }else{
-            AnswerBtn2.changeColor(color: UIColor.red, text: "Wrong")
-            AnswerBtn2.disableButton()
-            AnswerBtn3.disableButton()
-            AnswerBtn1.disableButton()
-            AnswerBtn4.disableButton()
-        }
+        
     }
     
-    @IBAction func AnswerBtn3(_ sender: Any) {
+    @IBAction func AnswerBtn3(_ sender: UIButton) {
         timer?.invalidate()
         timerIsValidate = true
+        self.buttonPressedIndex = sender.tag
 
+        changeButtonsState()
 
-        if AnswerBtn3.titleLabel?.text == self.questionList[self.currentQuestionNo].correctAns{
-            AnswerBtn3.changeColor(color: UIColor.green, text: "Correct")
-            isCorrect = true
-            AnswerBtn2.disableButton()
-            AnswerBtn3.disableButton()
-            AnswerBtn1.disableButton()
-            AnswerBtn4.disableButton()
-        }else{
-            AnswerBtn3.changeColor(color: UIColor.red, text: "Wrong")
-            AnswerBtn2.disableButton()
-            AnswerBtn3.disableButton()
-            AnswerBtn1.disableButton()
-            AnswerBtn4.disableButton()
-        }
     }
     
-    @IBAction func AnswerBtn4(_ sender: Any) {
+    @IBAction func AnswerBtn4(_ sender: UIButton) {
         timer?.invalidate()
         timerIsValidate = true
+        self.buttonPressedIndex = sender.tag
 
+        changeButtonsState()
 
-        if AnswerBtn4.titleLabel?.text == self.questionList[self.currentQuestionNo].correctAns{
-            AnswerBtn4.changeColor(color: UIColor.green, text: "Correct")
-            isCorrect = true
-            AnswerBtn2.disableButton()
-            AnswerBtn3.disableButton()
-            AnswerBtn1.disableButton()
-            AnswerBtn4.disableButton()
-        }else{
-            AnswerBtn4.changeColor(color: UIColor.red, text: "Wrong")
-            AnswerBtn2.disableButton()
-            AnswerBtn3.disableButton()
-            AnswerBtn1.disableButton()
-            AnswerBtn4.disableButton()
-        }
     }
     
     
     // Submit Button
     @IBAction func SubmitBtn(_ sender: Any) {
         
-
-    
-        if isCorrect {
-            if currentQuestionNo < self.questionList.count {
-                
-                
-                self.streakCount += 1
-                self.StreakLabel.text = String(self.streakCount)
-                
-                self.currentQuestionNo += 1
-                
-                print("No isss:::::::::::::: \(currentQuestionNo)")
-                
-                setQuestionUI()
-            }
-            else{
-                self.AlertOnFinish(Message: "you successfully finished the quiz with result: "+String(streakCount), title: "Congrats!!!")
-            }
+        if self.Buttons[buttonPressedIndex].titleLabel?.text == self.questionList[currentQuestionNo].correctAns {
+            
+            self.Buttons[buttonPressedIndex].changeColor(color: UIColor.green, text: "Correct")
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
+                print("done")
+                if self.currentQuestionNo < self.questionList.count {
+                    
+                    
+                    self.streakCount += 1
+                    self.StreakLabel.text = String(self.streakCount)
+                    
+                    self.currentQuestionNo += 1
+                    
+                    print("No isss:::::::::::::: \(self.currentQuestionNo)")
+                    
+                    self.setQuestionUI()
+                }
+                else{
+                    self.AlertOnFinish(Message: "you successfully finished the quiz with result: "+String(self.streakCount), title: "Congrats!!!")
+                }
+            })
+            
         }else{
+            self.Buttons[buttonPressedIndex].changeColor(color: UIColor.red, text: "Wrong")
             
             
             // Save Information in DB userName with Score
           //  interstitial.present(fromRootViewController: self)
-            self.AlertOnFinish(Message: "you got: \(streakCount) marks", title: "Better luck next time")
+            self.AlertOnFinish(Message: "you got: \(streakCount)", title: "Better luck next time")
 }
         
     }
